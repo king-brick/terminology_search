@@ -36,9 +36,9 @@ bool ResultViewLayer::init()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     auto origin = Director::getInstance()->getVisibleOrigin();
     
-	Button* button = Button::create("btn-test.png");
-	button->setPosition(Vec2(origin.x + visibleSize.width - button->getContentSize().width / 2 - 5, origin.y + visibleSize.height - button->getContentSize().height / 2));
-	button->setTitleText("BACK");
+	Button* button = Button::create("btn_back.png");
+	button->setPosition(Vec2(origin.x + visibleSize.width - button->getContentSize().width / 2 - 15, origin.y + visibleSize.height - button->getContentSize().height / 2));
+	//button->setTitleText("BACK");
 	button->addTouchEventListener(CC_CALLBACK_2(ResultViewLayer::touchEvent, this));
 	addChild(button, 2);
 

@@ -24,6 +24,7 @@ bool SearchLayer::init()
 	inputEdit = EditBox::create(Size(visibleSize.width, TEXT_INPUT_FONTSIZE + 4), "bk_input.png");
  	inputEdit->setFontSize(TEXT_INPUT_FONTSIZE);
  	inputEdit->setText("click here for input");
+	inputEdit->setFontColor(Color4B(40, 180, 50, 255));
 	inputEdit->setInputFlag(EditBox::InputFlag::SENSITIVE);
 	inputEdit->setInputMode(EditBox::InputMode::SINGLE_LINE);
 	inputEdit->setMaxLength(128);
@@ -218,15 +219,23 @@ void SearchLayer::updateResultView()
 		{
 			// 设置宽度
 			txt->setTextAreaSize(Size(textAreaWidth, 20));
-			// 设置内容
+
+			string content = r.Index + ",";
 			if (r.bEnglish)
 			{
-				txt->setString(r.Index + "," + r.Base.Chinese);
+				content = content + r.Base.Chinese;
 			}
 			else
 			{
-				txt->setString(r.Index + "," + r.Base.English);
+				content = content + r.Base.English;
 			}
+			// 处理过长的内容
+			//if (20 < content.length())
+			//{
+			//	content = content.substr(0, 20) + "...";
+			//}
+			// 设置内容
+			txt->setString(content);
 		}
 		_listView->pushBackCustomItem(item);
 	}

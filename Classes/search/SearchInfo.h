@@ -12,7 +12,7 @@ namespace MySearch
 // 输入框字体大小
 #define TEXT_INPUT_FONTSIZE 16
 // 输出结果字体大小
-#define TEXT_RESULT_FONTSIZE 13
+#define TEXT_RESULT_FONTSIZE 14
 // 文本行高度
 #define TEXT_LINE_HEIGHT (TEXT_RESULT_FONTSIZE + 2)
 

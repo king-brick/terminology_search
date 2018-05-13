@@ -4,27 +4,10 @@
 
 using namespace MySearch;
 
-Layout* MySearch::genDefaultItem(void)
-{
-	// 创建默认组件
-	auto visibleSize = Director::getInstance()->getVisibleSize();
-
-	Text* default_text = Text::create();
-	default_text->setString("Default Item");
-	default_text->setName("Title Text");
-	default_text->setTextColor(Color4B::BLACK);
-	default_text->setFontSize(TEXT_RESULT_FONTSIZE);
-	default_text->setTextHorizontalAlignment(TextHAlignment::LEFT);
-
-	auto default_item = Layout::create();
-	default_item->setTouchEnabled(true);
-	default_item->setContentSize(Size(visibleSize.width, 22));
-	default_text->setPosition(Vec2(default_item->getContentSize() / 2.0f));
-	default_text->setContentSize(default_item->getContentSize());
-	default_item->addChild(default_text, 1);
-
-	return default_item;
-}
+// 输入框背景色 182,227,241
+// 背景颜色228,245,250
+// 字体颜色
+static const Color4B TEXT_COLOR = Color4B(40, 180, 50, 255);
 
 void initializeTextComponent(Text* text, float width, float textWidth)
 {
@@ -32,13 +15,41 @@ void initializeTextComponent(Text* text, float width, float textWidth)
 		return;
 
 	text->setTextHorizontalAlignment(TextHAlignment::LEFT);
-	text->setTextColor(Color4B::BLACK);
+	text->setTextColor(TEXT_COLOR);
 	text->setFontSize(TEXT_RESULT_FONTSIZE);
 	text->setAnchorPoint(Vec2(0.f, 1.f));
 	text->setContentSize(Size(width, TEXT_LINE_HEIGHT));
 	text->ignoreContentAdaptWithSize(true);
 	text->setTextAreaSize(Size(textWidth, 0));
 	text->setContentSize(Size(textWidth, 0));
+}
+
+Layout* MySearch::genDefaultItem(void)
+{
+	// 创建默认组件
+	auto visibleSize = Director::getInstance()->getVisibleSize();
+	float width = visibleSize.width - 20;
+	float textAreaWidth = width - 30;
+
+	Text* default_text = Text::create();
+	default_text->setString("Default Item");
+	default_text->setName("Title Text");
+	initializeTextComponent(default_text, width, textAreaWidth);
+	//default_text->setTextColor(TEXT_COLOR);
+	//default_text->setFontSize(TEXT_RESULT_FONTSIZE);
+	//default_text->setTextHorizontalAlignment(TextHAlignment::LEFT);
+
+	auto default_item = Layout::create();
+	default_item->setTouchEnabled(true);
+	default_item->setContentSize(Size(visibleSize.width, 22));
+
+	float StartX = default_item->getPositionX() + 10.f;
+	float StartY = default_item->getPositionY() + 1.0f;
+	default_text->setPosition(Vec2(StartX, StartY));
+	default_text->setContentSize(default_item->getContentSize());
+	default_item->addChild(default_text, 1);
+
+	return default_item;
 }
 
 bool AgencyItem::init()
