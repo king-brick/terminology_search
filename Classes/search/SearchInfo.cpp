@@ -13,6 +13,38 @@ static const string c_str_group_file = "group.csv";
 using namespace cocos2d;
 using namespace MySearch;
 
+std::string getFileData(const char * pFileName)
+{
+	std::string filePath = FileUtils::getInstance()->fullPathForFilename(pFileName);
+
+	FileUtils::getInstance()->setPopupNotify(false);
+	ssize_t fileSize = 0;
+	std::string data = FileUtils::getInstance()->getStringFromFile(filePath.c_str());
+	FileUtils::getInstance()->setPopupNotify(true);
+
+	return data;
+}
+
+//字符串拆分  
+std::vector< std::string> splitString(std::string str, std::string pattern)
+{
+	std::string::size_type pos;
+	std::vector< std::string> result;
+	str += pattern;
+	unsigned int size = str.size();
+	for (unsigned int i = 0; i < size; i++)
+	{
+		pos = str.find(pattern, i);
+		if (pos < size)
+		{
+			std::string s = str.substr(i, pos - i);
+			result.push_back(s);
+			i = pos + pattern.size() - 1;
+		}
+	}
+	return result;
+}
+
 MySearch::DictionaryManager MySearch::g_Dictionary;
 
 DictionaryManager::DictionaryManager()
@@ -243,7 +275,32 @@ void DictionaryManager::LoadVocabulary()
 {
 	cout << "load " << c_str_vocabulary_file.c_str() << endl;
 
-    std::string fullpath = FileUtils::getInstance()->fullPathForFilename(c_str_vocabulary_file);
+	auto data = getFileData(c_str_vocabulary_file.c_str());
+	// 读行
+	auto lines = splitString(data, "\r");
+
+	// 拆分行
+	for (int i = 1; i < lines.size(); ++i)
+	{
+		auto fields = splitString(lines[i], ",");
+		if (fields.size() < 8)
+			continue;
+
+		SVocabulary s;
+		s.Base.id = atoi(fields[0].c_str());
+		s.Base.English = fields[1];
+		s.Base.Chinese = fields[2];
+		s.Paraphrase = fields[3];
+		s.EnglishSource = fields[4];
+		s.EnglishNumber = fields[5];
+		s.ChineseSource = fields[6];
+		s.ChineseNumber = fields[7];
+
+		AllVocabulary.insert(make_pair(s.Base.id, s));
+		Add2AllIndex(s.Base, EType::Vocabulary);
+	}
+    /*
+	std::string fullpath = FileUtils::getInstance()->fullPathForFilename(c_str_vocabulary_file);
     
 	jay::util::CSVread csv_read(fullpath,
 		jay::util::CSVread::strict_mode
@@ -304,7 +361,7 @@ void DictionaryManager::LoadVocabulary()
 // 			}
 // 		}
 	}
-
+	*/
 	// 排序
 }
 
@@ -312,6 +369,29 @@ void DictionaryManager::LoadAgency()
 {
 	cout << "load " << c_str_agency_file.c_str() << endl;
 
+	auto data = getFileData(c_str_agency_file.c_str());
+	// 读行
+	auto lines = splitString(data, "\r");
+
+	// 拆分行
+	for (int i = 1; i < lines.size(); ++i)
+	{
+		auto fields = splitString(lines[i], ",");
+		if (fields.size() < 4)
+			continue;
+
+		SAgency s;
+		s.Base.id = atoi(fields[0].c_str());
+		s.Base.Chinese = fields[1];
+		s.Base.English = fields[2];
+		s.EnglishFullName = fields[3];
+
+		AllAgency.insert(make_pair(s.Base.id, s));
+		Add2AllIndex(s.Base, EType::Agency);
+	}
+
+
+	/*
     std::string fullpath = FileUtils::getInstance()->fullPathForFilename(c_str_agency_file);
     
 	jay::util::CSVread csv_read(fullpath,
@@ -362,6 +442,7 @@ void DictionaryManager::LoadAgency()
 // 			}
 // 		}
 	}
+	*/
 	// 排序
 }
 
@@ -369,6 +450,27 @@ void DictionaryManager::LoadGroup()
 {
 	cout << "load " << c_str_group_file.c_str() << endl;
 
+	auto data = getFileData(c_str_group_file.c_str());
+	// 读行
+	auto lines = splitString(data, "\r");
+
+	// 拆分行
+	for (int i = 1; i < lines.size(); ++i)
+	{
+		auto fields = splitString(lines[i], ",");
+		if (fields.size() < 4)
+			continue;
+
+		SCountryGroup s;
+		s.Base.id = atoi(fields[0].c_str());
+		s.Base.Chinese = fields[1];
+		s.Base.English = fields[2];
+		s.EnglishFullName = fields[3];
+
+		AllGroup.insert(make_pair(s.Base.id, s));
+		Add2AllIndex(s.Base, EType::Group);
+	}
+	/*
     std::string fullpath = FileUtils::getInstance()->fullPathForFilename(c_str_group_file);
     
 	jay::util::CSVread csv_read(fullpath,
@@ -419,6 +521,7 @@ void DictionaryManager::LoadGroup()
 // 			}
 // 		}
 	}
+	*/
 	// 排序
 }
 
