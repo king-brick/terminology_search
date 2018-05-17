@@ -1,4 +1,4 @@
-#include "ResultView.h"
+ï»¿#include "ResultView.h"
 #include "AppMacros.h"
 #include "ui/UIText.h"
 #include "ui/UIButton.h"
@@ -42,7 +42,7 @@ bool ResultViewLayer::init()
 	button->addTouchEventListener(CC_CALLBACK_2(ResultViewLayer::touchEvent, this));
 	addChild(button, 2);
 
-	// ´´½¨Ë÷Òý¿ò
+	// åˆ›å»ºç´¢å¼•æ¡†
 	_listView = ListView::create();
 	// set list view ex direction
 	_listView->setDirection(ScrollView::Direction::VERTICAL);
@@ -77,7 +77,7 @@ void ResultViewLayer::touchEvent(Ref *pSender, Widget::TouchEventType type)
 		{
 			layer->onResultViewClose();
 		}
-		// ¹Ø±Õ¸ÃÒ³Ãæ
+		// å…³é—­è¯¥é¡µé¢
 		removeFromParent();
 	}
 	break;
@@ -120,7 +120,7 @@ void ResultViewLayer::updateResultView(const string input)
 	int nIndex = 0;
 	for (auto idx : result->ids)
 	{
-		//// Ôö¼ÓÒ»Ìõ¼ä¸ôÏß
+		//// å¢žåŠ ä¸€æ¡é—´éš”çº¿
 		//if (0 < nIndex)
 		//{
 		//	CCSprite* sprite = CCSprite::createWithSpriteFrameName("orange_edit.png");

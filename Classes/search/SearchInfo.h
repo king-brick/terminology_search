@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <map>
 #include <string>
@@ -9,14 +9,14 @@ using namespace std;
 namespace MySearch
 {
 
-// ÊäÈë¿ò×ÖÌå´óĞ¡
-#define TEXT_INPUT_FONTSIZE 16
-// Êä³ö½á¹û×ÖÌå´óĞ¡
+// è¾“å…¥æ¡†å­—ä½“å¤§å°
+#define TEXT_INPUT_FONTSIZE 14
+// è¾“å‡ºç»“æœå­—ä½“å¤§å°
 #define TEXT_RESULT_FONTSIZE 14
-// ÎÄ±¾ĞĞ¸ß¶È
+// æ–‡æœ¬è¡Œé«˜åº¦
 #define TEXT_LINE_HEIGHT (TEXT_RESULT_FONTSIZE + 2)
 
-// ÃûÂ¼ÀàĞÍ
+// åå½•ç±»å‹
 enum EType
 {
 	Agency,
@@ -24,77 +24,77 @@ enum EType
 	Group,
 };
 
-// µ¥Ôª»ù´¡ĞÅÏ¢
+// å•å…ƒåŸºç¡€ä¿¡æ¯
 struct RecordBase
 {
-	// Ë÷ÒıID
+	// ç´¢å¼•ID
 	int id;
-	// Ó¢ÎÄ´Ê»ã¡¢ËõĞ´
+	// è‹±æ–‡è¯æ±‡ã€ç¼©å†™
 	string English;
-	// ÖĞÎÄ´Ê»ã¡¢¹ú¼Ò¡¢×éÖ¯
+	// ä¸­æ–‡è¯æ±‡ã€å›½å®¶ã€ç»„ç»‡
 	string Chinese;
 };
 
-// ¹ú¼ÒÈÏ¿É»ú¹¹ÃûÂ¼
+// å›½å®¶è®¤å¯æœºæ„åå½•
 struct SAgency
 {
-	// »ù´¡Êı¾İ
+	// åŸºç¡€æ•°æ®
 	RecordBase Base;
-	// Ó¢ÎÄÈ«³Æ
+	// è‹±æ–‡å…¨ç§°
 	string EnglishFullName;
-	// ÖĞÎÄÒëÃû
+	// ä¸­æ–‡è¯‘å
 	string ChineseFullName;
 };
 
-// ÈÏ¿É´Ê»ã
+// è®¤å¯è¯æ±‡
 struct SVocabulary
 {
-	// »ù´¡Êı¾İ
+	// åŸºç¡€æ•°æ®
 	RecordBase Base;
-	// ËµÃ÷£¨ÊÍÒå¡¢´ÊĞÔ¡¢ÊÊÓÃÁìÓòµÈ£©
+	// è¯´æ˜ï¼ˆé‡Šä¹‰ã€è¯æ€§ã€é€‚ç”¨é¢†åŸŸç­‰ï¼‰
 	string Paraphrase;
-	// Ó¢ÎÄÀ´Ô´
+	// è‹±æ–‡æ¥æº
 	string EnglishSource;
-	// Ó¢ÎÄÌõ¿îºÅ
+	// è‹±æ–‡æ¡æ¬¾å·
 	string EnglishNumber;
-	// ÖĞÎÄÀ´Ô´
+	// ä¸­æ–‡æ¥æº
 	string ChineseSource;
-	// ÖĞÎÄÌõ¿îºÅ
+	// ä¸­æ–‡æ¡æ¬¾å·
 	string ChineseNumber;
 };
 
-// ¹ú¼Ê£¨¹ú¼Ò£©×éÖ¯
+// å›½é™…ï¼ˆå›½å®¶ï¼‰ç»„ç»‡
 struct SCountryGroup
 {
-	// »ù´¡Êı¾İ
+	// åŸºç¡€æ•°æ®
 	RecordBase Base;
-	// Ó¢ÎÄÈ«³Æ
+	// è‹±æ–‡å…¨ç§°
 	string EnglishFullName;
-	// ÖĞÎÄÒëÃû
+	// ä¸­æ–‡è¯‘å
 	string ChineseFullName;
 };
 
-// »ù´¡Ë÷Òı
+// åŸºç¡€ç´¢å¼•
 struct SIndexBase
 {
 	int Id;
 	EType Type;
 };
 
-// »ù´¡ĞÅÏ¢Ë÷Òı
+// åŸºç¡€ä¿¡æ¯ç´¢å¼•
 struct SSimpleIndex
 {
-	// ÀàËÆµÄ½á¹û
+	// ç±»ä¼¼çš„ç»“æœ
 	string Index;
-	// ÊÇ·ñËÑË÷Ó¢ÎÄ
+	// æ˜¯å¦æœç´¢è‹±æ–‡
 	bool bEnglish;
-	// »ù´¡ĞÅÏ¢
+	// åŸºç¡€ä¿¡æ¯
 	RecordBase Base;
-	// ¶àÒå´Ê
+	// å¤šä¹‰è¯
 	vector<SIndexBase> ids;
 };
 
-// ĞÅÏ¢¹ÜÀí
+// ä¿¡æ¯ç®¡ç†
 class DictionaryManager
 {
 public:
@@ -102,59 +102,59 @@ public:
 	~DictionaryManager();
 
 public:
-	// ¼ÓÔØÔ­Ê¼Êı¾İÎÄ¼ş
+	// åŠ è½½åŸå§‹æ•°æ®æ–‡ä»¶
 	void LoadData();
-	// ËÑË÷È«²¿
+	// æœç´¢å…¨éƒ¨
 	const SSimpleIndex* FindAll(string input);
-	// Ä£ºı²éÕÒÈ«²¿
+	// æ¨¡ç³ŠæŸ¥æ‰¾å…¨éƒ¨
 	vector<SSimpleIndex> FindLikeAll(string input);
-	// ·µ»ØËÑË÷½á¹û
+	// è¿”å›æœç´¢ç»“æœ
 	const SSimpleIndex* GetSearchIndex(string input);
 	/*
-	// ËÑË÷ÈÏ¿É´Ê»ã
+	// æœç´¢è®¤å¯è¯æ±‡
 	vector<SVocabulary> SearchVocabulary(string input);
-	// ËÑË÷¹ú¼ÒÈÏ¿É»ú¹¹
+	// æœç´¢å›½å®¶è®¤å¯æœºæ„
 	vector<SAgency> SearchAgency(string input);
-	// ËÑË÷¹ú¼Ê£¨¹ú¼Ò£©×éÖ¯
+	// æœç´¢å›½é™…ï¼ˆå›½å®¶ï¼‰ç»„ç»‡
 	vector<SCountryGroup> SearchGroup(string input);
 	*/
 	const SVocabulary& GetVocabularyInfo(int Id);
 	const SAgency& GetAgencyInfo(int Id);
 	const SCountryGroup& GetGroupInfo(int Id);
 /*
-	// ¾«È·²éÕÒ
+	// ç²¾ç¡®æŸ¥æ‰¾
 protected:
-	// Í¨¹ıÓ¢ÎÄËÑË÷ÈÏ¿É´Ê»ã
+	// é€šè¿‡è‹±æ–‡æœç´¢è®¤å¯è¯æ±‡
 	vector<int> FindVocabularyByEnglish(string English);
-	// Í¨¹ıÖĞÎÄËÑË÷ÈÏ¿É´Ê»ã
+	// é€šè¿‡ä¸­æ–‡æœç´¢è®¤å¯è¯æ±‡
 	vector<int> FindVocabularyByChinese(string Chinese);
-	// Í¨¹ıÓ¢ÎÄËõĞ´ËÑË÷¹ú¼ÒÈÏ¿É»ú¹¹
+	// é€šè¿‡è‹±æ–‡ç¼©å†™æœç´¢å›½å®¶è®¤å¯æœºæ„
 	vector<int> FindAgencyByAbbrName(string AbbrName);
-	// Í¨¹ıÖĞÎÄËÑË÷¹ú¼ÒÈÏ¿É»ú¹¹
+	// é€šè¿‡ä¸­æ–‡æœç´¢å›½å®¶è®¤å¯æœºæ„
 	vector<int> FindAgencyByChineseName(string AgencyName);
-	// Í¨¹ıÓ¢ÎÄËõĞ´ËÑË÷¹ú¼Ê£¨¹ú¼Ò£©×éÖ¯
+	// é€šè¿‡è‹±æ–‡ç¼©å†™æœç´¢å›½é™…ï¼ˆå›½å®¶ï¼‰ç»„ç»‡
 	vector<int> FindGroupByAbbrName(string AbbrName);
-	// Í¨¹ıÖĞÎÄËÑË÷¹ú¼Ê£¨¹ú¼Ò£©×éÖ¯
+	// é€šè¿‡ä¸­æ–‡æœç´¢å›½é™…ï¼ˆå›½å®¶ï¼‰ç»„ç»‡
 	vector<int> FindGroupByChinese(string ChineseName);
 
-	// Ä£ºı²éÕÒ
+	// æ¨¡ç³ŠæŸ¥æ‰¾
 protected:
-	// Í¨¹ıÓ¢ÎÄÄ£ºıËÑË÷ÈÏ¿É´Ê»ã
+	// é€šè¿‡è‹±æ–‡æ¨¡ç³Šæœç´¢è®¤å¯è¯æ±‡
 	vector<int> FindLikeVocabularyByEnglish(string English);
-	// Í¨¹ıÖĞÎÄÄ£ºıËÑË÷ÈÏ¿É´Ê»ã
+	// é€šè¿‡ä¸­æ–‡æ¨¡ç³Šæœç´¢è®¤å¯è¯æ±‡
 	vector<int> FindLikeVocabularyByChinese(string Chinese);
 
-	// Í¨¹ıÓ¢ÎÄËõĞ´Ä£ºıËÑË÷¹ú¼ÒÈÏ¿É»ú¹¹
+	// é€šè¿‡è‹±æ–‡ç¼©å†™æ¨¡ç³Šæœç´¢å›½å®¶è®¤å¯æœºæ„
 	vector<int> FindLikeAgencyByAbbrName(string AbbrName);
-	// Í¨¹ıÖĞÎÄÄ£ºıËÑË÷¹ú¼ÒÈÏ¿É»ú¹¹
+	// é€šè¿‡ä¸­æ–‡æ¨¡ç³Šæœç´¢å›½å®¶è®¤å¯æœºæ„
 	vector<int> FindLikeAgencyByChineseName(string ChineseName);
 
-	// Í¨¹ıÓ¢ÎÄËõĞ´Ä£ºıËÑË÷¹ú¼Ê£¨¹ú¼Ò£©×éÖ¯
+	// é€šè¿‡è‹±æ–‡ç¼©å†™æ¨¡ç³Šæœç´¢å›½é™…ï¼ˆå›½å®¶ï¼‰ç»„ç»‡
 	vector<int> FindLikeGroupByAbbrName(string AbbrName);
-	// Í¨¹ıÖĞÎÄÄ£ºıËÑË÷¹ú¼Ê£¨¹ú¼Ò£©×éÖ¯
+	// é€šè¿‡ä¸­æ–‡æ¨¡ç³Šæœç´¢å›½é™…ï¼ˆå›½å®¶ï¼‰ç»„ç»‡
 	vector<int> FindLikeGroupByChineseName(string ChineseName);
 	*/
-	// ¼ÓÔØ×ÊÔ´
+	// åŠ è½½èµ„æº
 protected:
 	void LoadVocabulary();
 	void LoadAgency();
@@ -167,32 +167,32 @@ public:
 	static string Utf8ToGBK(const char *inbuf);
 
 private:
-	// ËùÓĞµÄ×¨Òµ´Ê»ãÁĞ±í
+	// æ‰€æœ‰çš„ä¸“ä¸šè¯æ±‡åˆ—è¡¨
 	map<int, SVocabulary> AllVocabulary;
-// 	// Ó¢ÎÄ´Ê»ãË÷Òı
+// 	// è‹±æ–‡è¯æ±‡ç´¢å¼•
 // 	map<string, vector<int>> VocabularyEnglishIdx;
-// 	// ÖĞÎÄË÷Òı
+// 	// ä¸­æ–‡ç´¢å¼•
 // 	map<string, vector<int>> VocabularyChineseIdx;
-	// ¹ú¼ÒÈÏ¿É»ú¹¹ÃûÂ¼
+	// å›½å®¶è®¤å¯æœºæ„åå½•
 	map<int, SAgency> AllAgency;
-// 	// ¹ú¼ÒÈÏ¿É»ú¹¹ÃûÂ¼ ÖĞÎÄË÷Òı
+// 	// å›½å®¶è®¤å¯æœºæ„åå½• ä¸­æ–‡ç´¢å¼•
 // 	map<string, vector<int>> AgencyChineseIdx;
-// 	// ¹ú¼ÒÈÏ¿É»ú¹¹ÃûÂ¼ Ó¢ÎÄËõĞ´Ë÷Òı
+// 	// å›½å®¶è®¤å¯æœºæ„åå½• è‹±æ–‡ç¼©å†™ç´¢å¼•
 // 	map<string, vector<int>> AgencyAbbrIdx;
 
-	// ¹ú¼Ê£¨¹ú¼Ò£©×éÖ¯
+	// å›½é™…ï¼ˆå›½å®¶ï¼‰ç»„ç»‡
 	map<int, SCountryGroup> AllGroup;
-// 	// ¹ú¼Ê£¨¹ú¼Ò£©×éÖ¯ ÖĞÎÄË÷Òı
+// 	// å›½é™…ï¼ˆå›½å®¶ï¼‰ç»„ç»‡ ä¸­æ–‡ç´¢å¼•
 // 	map<string, vector<int>> GroupChineseIdx;
-// 	// ¹ú¼Ê£¨¹ú¼Ò£©×éÖ¯ Ó¢ÎÄËõĞ´Ë÷Òı
+// 	// å›½é™…ï¼ˆå›½å®¶ï¼‰ç»„ç»‡ è‹±æ–‡ç¼©å†™ç´¢å¼•
 // 	map<string, vector<int>> GroupAbbrIdx;
 
-	// ËùÓĞµÄ´ÊË÷Òı
+	// æ‰€æœ‰çš„è¯ç´¢å¼•
 	map<string, SSimpleIndex> AllIndex;
 
-	// »º´æÉÏÒ»´ÎµÄ²éÕÒ
+	// ç¼“å­˜ä¸Šä¸€æ¬¡çš„æŸ¥æ‰¾
 	vector<SSimpleIndex> CacheSearchResult;
-	// ÉÏÒ»´Î²éÕÒµÄ×Ö·ûÊı
+	// ä¸Šä¸€æ¬¡æŸ¥æ‰¾çš„å­—ç¬¦æ•°
 	string SaveLastIndex;
 };
 

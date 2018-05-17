@@ -1,4 +1,4 @@
-#include "SearchScene.h"
+ï»¿#include "SearchScene.h"
 #include "AppMacros.h"
 #include "ui/UIText.h"
 #include "ui/UIImageView.h"
@@ -20,8 +20,8 @@ bool SearchLayer::init()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     auto origin = Director::getInstance()->getVisibleOrigin();
     
-	// ´´½¨ÊäÈë¿ò
-	inputEdit = EditBox::create(Size(visibleSize.width, TEXT_INPUT_FONTSIZE + 4), "bk_input.png");
+	// åˆ›å»ºè¾“å…¥æ¡†
+	inputEdit = EditBox::create(Size(visibleSize.width, TEXT_INPUT_FONTSIZE + 2), "bk_input.png");
  	inputEdit->setFontSize(TEXT_INPUT_FONTSIZE);
  	inputEdit->setText("click here for input");
 	inputEdit->setFontColor(Color4B(40, 180, 50, 255));
@@ -36,7 +36,7 @@ bool SearchLayer::init()
 	this->addChild(inputEdit, 1);
 
 	Color3B backColor = Color3B(30,30,30);
-	// ´´½¨Ë÷Òı¿ò
+	// åˆ›å»ºç´¢å¼•æ¡†
 	_listView = ListView::create();
 	// set list view ex direction
 	_listView->setDirection(ScrollView::Direction::VERTICAL);
@@ -59,7 +59,7 @@ bool SearchLayer::init()
 	default_item = MySearch::genDefaultItem();
 	_listView->setItemModel(default_item);
 
-    // ±³¾°Í¼Æ¬
+    // èƒŒæ™¯å›¾ç‰‡
     auto sprite = Sprite::create("bk_output.png");
     // position the sprite on the center of the screen
     sprite->setPosition(Vec2(visibleSize / 2) + origin);
@@ -67,7 +67,7 @@ bool SearchLayer::init()
     // add the sprite as a child to this layer
 	this->addChild(sprite);
 
-	// ¼ÓÔØÊı¾İ
+	// åŠ è½½æ•°æ®
 	g_Dictionary.LoadData();
 
     return true;
@@ -80,7 +80,7 @@ void SearchLayer::editBoxEditingDidBegin(EditBox* editBox)
     {
         inputEdit->setText("");
     }
-	// ´ò¿ª²éÕÒ½á¹û¿ò
+	// æ‰“å¼€æŸ¥æ‰¾ç»“æœæ¡†
 	if (nullptr != _listView)
 	{
 		_listView->setVisible(true);
@@ -90,7 +90,7 @@ void SearchLayer::editBoxEditingDidBegin(EditBox* editBox)
 void SearchLayer::editBoxEditingDidEndWithAction(EditBox* editBox, EditBoxEndAction action)
 {
 	log("editBox %p DidEnd !", editBox);
-	// ¹Ø±Õ²éÕÒ½á¹û¿ò
+	// å…³é—­æŸ¥æ‰¾ç»“æœæ¡†
 	if (nullptr != _listView)
 	{
 //		_listView->setVisible(false);
@@ -104,7 +104,7 @@ void SearchLayer::editBoxEditingDidEndWithAction(EditBox* editBox, EditBoxEndAct
 void SearchLayer::editBoxTextChanged(EditBox* editBox, const std::string& text)
 {
 	log("editBox %p TextChanged, text: %s ", editBox, text.c_str());
-	// ¸üĞÂ²éÕÒ½á¹û¿ò
+	// æ›´æ–°æŸ¥æ‰¾ç»“æœæ¡†
 	updateResultView();
 }
 
@@ -129,7 +129,7 @@ void SearchLayer::selectedItemEvent(Ref *pSender, ListView::EventType type)
 		ListView* listView = static_cast<ListView*>(pSender);
 		auto item = listView->getItem(listView->getCurSelectedIndex());
 		log("select child end index = %d", item->getTag());
-		// ÏÔÊ¾´ÊÓï½âÊÍ
+		// æ˜¾ç¤ºè¯è¯­è§£é‡Š
 		//selectView(item->getTag());
 // 		void* idxdata = item->getUserData();
 // 		string input = string((char*)idxdata);
@@ -191,22 +191,23 @@ void SearchLayer::updateResultView()
 	if (nullptr == _listView)
 		return;
 
-	// ÒÆ³ıµôËùÓĞ×ÓÏî
+	// ç§»é™¤æ‰æ‰€æœ‰å­é¡¹
 	_listView->removeAllItems();
 
 	string input = inputEdit->getText();
-	// ÊäÈëÎª¿ÕÊ± ²»²éÕÒ
+	// è¾“å…¥ä¸ºç©ºæ—¶ ä¸æŸ¥æ‰¾
 	if (input.empty())
 	{
-		// Çå¿Õ»º´æ
+		// æ¸…ç©ºç¼“å­˜
 		ResultCache.clear();
 		return;
 	}
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	float width = visibleSize.width - 20;
-	float textAreaWidth = width - 30;
+	float textAreaWidth = width - 10;
 
-	// ²éÕÒ½á¹û
+	// æŸ¥æ‰¾ç»“æœ
+	float h = 0.f;
 	vector<SSimpleIndex> s = g_Dictionary.FindLikeAll(input);
 	for (auto r : s)
 	{
@@ -217,8 +218,8 @@ void SearchLayer::updateResultView()
 		Text* txt = (Text*)item->getChildByName("Title Text");
 		if (txt)
 		{
-			// ÉèÖÃ¿í¶È
-			txt->setTextAreaSize(Size(textAreaWidth, 20));
+			// è®¾ç½®å®½åº¦
+			txt->setTextAreaSize(Size(textAreaWidth, 10));
 
 			string content = r.Index + ",";
 			if (r.bEnglish)
@@ -229,14 +230,17 @@ void SearchLayer::updateResultView()
 			{
 				content = content + r.Base.English;
 			}
-			// ´¦Àí¹ı³¤µÄÄÚÈİ
+			// å¤„ç†è¿‡é•¿çš„å†…å®¹
 			//if (20 < content.length())
 			//{
 			//	content = content.substr(0, 20) + "...";
 			//}
-			// ÉèÖÃÄÚÈİ
+			// è®¾ç½®å†…å®¹
 			txt->setString(content);
 		}
+		//h = txt->getContentSize().height;
+		//item->setContentSize(Size(item->getContentSize().width, h));
+
 		_listView->pushBackCustomItem(item);
 	}
 

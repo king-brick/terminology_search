@@ -1,12 +1,12 @@
-#include "SearchViewItem.h"
+ï»¿#include "SearchViewItem.h"
 #include "AppMacros.h"
 #include "ui/UIText.h"
 
 using namespace MySearch;
 
-// ÊäÈë¿ò±³¾°É« 182,227,241
-// ±³¾°ÑÕÉ«228,245,250
-// ×ÖÌåÑÕÉ«
+// è¾“å…¥æ¡†èƒŒæ™¯è‰² 182,227,241
+// èƒŒæ™¯é¢œè‰²228,245,250
+// å­—ä½“é¢œè‰²
 static const Color4B TEXT_COLOR = Color4B(40, 180, 50, 255);
 
 void initializeTextComponent(Text* text, float width, float textWidth)
@@ -26,7 +26,7 @@ void initializeTextComponent(Text* text, float width, float textWidth)
 
 Layout* MySearch::genDefaultItem(void)
 {
-	// ´´½¨Ä¬ÈÏ×é¼þ
+	// åˆ›å»ºé»˜è®¤ç»„ä»¶
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	float width = visibleSize.width - 20;
 	float textAreaWidth = width - 30;
@@ -34,18 +34,20 @@ Layout* MySearch::genDefaultItem(void)
 	Text* default_text = Text::create();
 	default_text->setString("Default Item");
 	default_text->setName("Title Text");
-	initializeTextComponent(default_text, width, textAreaWidth);
-	//default_text->setTextColor(TEXT_COLOR);
-	//default_text->setFontSize(TEXT_RESULT_FONTSIZE);
-	//default_text->setTextHorizontalAlignment(TextHAlignment::LEFT);
+	default_text->setTextHorizontalAlignment(TextHAlignment::LEFT);
+	default_text->setTextColor(TEXT_COLOR);
+	default_text->setFontSize(10);
+	default_text->ignoreContentAdaptWithSize(false);
+	//initializeTextComponent(default_text, width, textAreaWidth);
 
 	auto default_item = Layout::create();
 	default_item->setTouchEnabled(true);
-	default_item->setContentSize(Size(visibleSize.width, 22));
+	default_item->setContentSize(Size(width, 10));
 
-	float StartX = default_item->getPositionX() + 10.f;
-	float StartY = default_item->getPositionY() + 1.0f;
-	default_text->setPosition(Vec2(StartX, StartY));
+	//float StartX = default_item->getPositionX() + 10.f;
+	//float StartY = default_item->getPositionY() + 1.0f;
+	//default_text->setPosition(Vec2(StartX, StartY));
+	default_text->setPosition(default_item->getContentSize()/2.0f);
 	default_text->setContentSize(default_item->getContentSize());
 	default_item->addChild(default_text, 1);
 
@@ -73,26 +75,26 @@ bool AgencyItem::init()
 	auto anchor = Vec2(0.f, 1.f);
 	float StartX = getPositionX() + 10.f;
 	float StartY = getPositionY() + height - TEXT_LINE_HEIGHT;
-	// ËõÐ´
+	// ç¼©å†™
 	textEnglish = Text::create();
 	initializeTextComponent(textEnglish, width, textAreaWidth);
 	textEnglish->setPosition(Vec2(StartX, StartY));
 	addChild(textEnglish, 1);
 
-	// Ó¢ÎÄÈ«³Æ
+	// è‹±æ–‡å…¨ç§°
 	StartY -= TEXT_LINE_HEIGHT + 4;
 	textEnglishFull = Text::create();
 	initializeTextComponent(textEnglishFull, width, textAreaWidth);
 	textEnglishFull->setPosition(Vec2(StartX, StartY));
 	addChild(textEnglishFull, 1);
 
-	// ÖÐÎÄÒëÃû
+	// ä¸­æ–‡è¯‘å
 	StartY -= TEXT_LINE_HEIGHT + 4;
 	textChineseFull = Text::create();
 	initializeTextComponent(textChineseFull, width, textAreaWidth);
 	textChineseFull->setPosition(Vec2(StartX, StartY));
 	addChild(textChineseFull, 1);
-	// ¹ú¼Ò
+	// å›½å®¶
 	StartY -= TEXT_LINE_HEIGHT + 4;
 	textChinese = Text::create();
 	initializeTextComponent(textChinese, width, textAreaWidth);
@@ -104,9 +106,19 @@ bool AgencyItem::init()
 
 void AgencyItem::updateView(const SAgency& agency)
 {
+	float posY = textEnglish->getPositionY();
 	textEnglish->setString(agency.Base.English);
+	posY -= textEnglish->getContentSize().height + 4;
+
+	textChinese->setPositionY(posY);
 	textChinese->setString(agency.Base.Chinese);
+	posY -= textChinese->getContentSize().height + 4;
+
+	textEnglishFull->setPositionY(posY);
 	textEnglishFull->setString(agency.EnglishFullName);
+	posY -= textEnglishFull->getContentSize().height + 4;
+
+	textChineseFull->setPositionY(posY);
 	textChineseFull->setString(agency.ChineseFullName);
 }
 
@@ -132,49 +144,62 @@ bool VocabularyItem::init()
 
 	float StartX = getPositionX() + 10.f;
 	float StartY = getPositionY() + height - TEXT_LINE_HEIGHT;
-	// Ó¢ÎÄ´Ê»ã
+	// è‹±æ–‡è¯æ±‡
 	textEnglish = Text::create();
 	initializeTextComponent(textEnglish, width, textAreaWidth);
 	textEnglish->setPosition(Vec2(StartX, StartY));
 	addChild(textEnglish, 1);
-	// Ó¢ÎÄÀ´Ô´¡¢Ìõ¿îºÅ
+	// è‹±æ–‡æ¥æºã€æ¡æ¬¾å·
 	StartY -= TEXT_LINE_HEIGHT + 4;
 	textEnglishSourceNumber = Text::create();
 	initializeTextComponent(textEnglishSourceNumber, width, textAreaWidth);
 	textEnglishSourceNumber->setPosition(Vec2(StartX, StartY));
 	addChild(textEnglishSourceNumber, 1);
-	// ÖÐÎÄ´Ê»ã
+	// ä¸­æ–‡è¯æ±‡
 	StartY -= TEXT_LINE_HEIGHT + 4;
 	textChinese = Text::create();
 	initializeTextComponent(textChinese, width, textAreaWidth);
 	textChinese->setPosition(Vec2(StartX, StartY));
 	addChild(textChinese, 1);
-	// ÖÐÎÄÀ´Ô´¡¢Ìõ¿îºÅ
+	// ä¸­æ–‡æ¥æºã€æ¡æ¬¾å·
 	StartY -= TEXT_LINE_HEIGHT + 4;
 	textChineseSourceNumber = Text::create();
 	initializeTextComponent(textChineseSourceNumber, width, textAreaWidth);
 	textChineseSourceNumber->setPosition(Vec2(StartX, StartY));
 	addChild(textChineseSourceNumber, 1);
-	// ËµÃ÷
+	// è¯´æ˜Ž
 	StartY -= TEXT_LINE_HEIGHT + 4;
 	textParaphrase = Text::create();
 	initializeTextComponent(textParaphrase, width, textAreaWidth);
 	textParaphrase->setPosition(Vec2(StartX, StartY));
 	addChild(textParaphrase, 1);
 
-	// ÖÐÎÄ´Ê»ã
-	// ÖÐÎÄÀ´Ô´¡¢Ìõ¿îºÅ
-	// ËµÃ÷
+	// ä¸­æ–‡è¯æ±‡
+	// ä¸­æ–‡æ¥æºã€æ¡æ¬¾å·
+	// è¯´æ˜Ž
 
 	return true;
 }
 
 void VocabularyItem::updateView(const SVocabulary& vocabulary)
 {
+	float posY = textEnglish->getPositionY();
 	textEnglish->setString(vocabulary.Base.English);
+	posY -= textEnglish->getContentSize().height + 4;
+
+	textEnglishSourceNumber->setPositionY(posY);
 	textEnglishSourceNumber->setString(vocabulary.EnglishSource + " : " + vocabulary.EnglishNumber);
+	posY -= textEnglishSourceNumber->getContentSize().height + 4;
+
+	textChinese->setPositionY(posY);
 	textChinese->setString(vocabulary.Base.Chinese);
+	posY -= textChinese->getContentSize().height + 4;
+
+	textChineseSourceNumber->setPositionY(posY);
 	textChineseSourceNumber->setString(vocabulary.ChineseSource + " : " + vocabulary.ChineseNumber);
+	posY -= textChineseSourceNumber->getContentSize().height + 4;
+
+	textParaphrase->setPositionY(posY);
 	textParaphrase->setString(vocabulary.Paraphrase);
 
 	auto s = textParaphrase->getVirtualRendererSize();
@@ -202,27 +227,27 @@ bool CountryGroupItem::init()
 	auto anchor = Vec2(0.f, 1.f);
 	float StartX = getPositionX() + 10.f;
 	float StartY = getPositionY() + height - TEXT_LINE_HEIGHT;
-	// ËõÐ´
+	// ç¼©å†™
 	textEnglish = Text::create();
 	initializeTextComponent(textEnglish, width, textAreaWidth);
 	textEnglish->setPosition(Vec2(StartX, StartY));
 	addChild(textEnglish, 1);
 
-	// Ó¢ÎÄÈ«³Æ
+	// è‹±æ–‡å…¨ç§°
 	StartY -= TEXT_LINE_HEIGHT + 4;
 	textEnglishFull = Text::create();
 	initializeTextComponent(textEnglishFull, width, textAreaWidth);
 	textEnglishFull->setPosition(Vec2(StartX, StartY));
 	addChild(textEnglishFull, 1);
 
-	// ÖÐÎÄÒëÃû
+	// ä¸­æ–‡è¯‘å
 	StartY -= TEXT_LINE_HEIGHT + 4;
 	textChineseFull = Text::create();
 	initializeTextComponent(textChineseFull, width, textAreaWidth);
 	textChineseFull->setPosition(Vec2(StartX, StartY));
 	addChild(textChineseFull, 1);
 
-	// ¹ú¼Ò
+	// å›½å®¶
 	StartY -= TEXT_LINE_HEIGHT + 4;
 	textChinese = Text::create();
 	initializeTextComponent(textChinese, width, textAreaWidth);
@@ -234,8 +259,18 @@ bool CountryGroupItem::init()
 
 void CountryGroupItem::updateView(const SCountryGroup& group)
 {
+	float posY = textEnglish->getPositionY();
 	textEnglish->setString(group.Base.English);
+	posY -= textEnglish->getContentSize().height + 4;
+
+	textChinese->setPositionY(posY);
 	textChinese->setString(group.Base.Chinese);
+	posY -= textChinese->getContentSize().height + 4;
+
+	textEnglishFull->setPositionY(posY);
 	textEnglishFull->setString(group.EnglishFullName);
+	posY -= textEnglishFull->getContentSize().height + 4;
+
+	textChineseFull->setPositionY(posY);
 	textChineseFull->setString(group.ChineseFullName);
 }
