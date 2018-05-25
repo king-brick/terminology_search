@@ -17,8 +17,7 @@ void initializeTextComponent(Text* text, float width, float textWidth)
 	text->setTextHorizontalAlignment(TextHAlignment::LEFT);
 	text->setTextColor(TEXT_COLOR);
 	text->setFontSize(TEXT_RESULT_FONTSIZE);
-	text->setAnchorPoint(Vec2(0.f, 1.f));
-	text->setContentSize(Size(width, TEXT_LINE_HEIGHT));
+	text->setAnchorPoint(Vec2(0.f, 0.f));
 	text->ignoreContentAdaptWithSize(true);
 	text->setTextAreaSize(Size(textWidth, 0));
 	text->setContentSize(Size(textWidth, 0));
@@ -72,7 +71,6 @@ bool AgencyItem::init()
 
 	setContentSize(Size(width, height));
 
-	auto anchor = Vec2(0.f, 1.f);
 	float StartX = getPositionX() + 10.f;
 	float StartY = getPositionY() + height - TEXT_LINE_HEIGHT;
 	// 缩写
@@ -101,25 +99,30 @@ bool AgencyItem::init()
 	textChinese->setPosition(Vec2(StartX, StartY));
 	addChild(textChinese, 1);
 
+	setLayoutType(Layout::Type::VERTICAL);
+
 	return true;
 }
 
 void AgencyItem::updateView(const SAgency& agency)
 {
-	float posY = textEnglish->getPositionY();
 	textEnglish->setString(agency.Base.English);
-	posY -= textEnglish->getContentSize().height + 4;
-
-	textChinese->setPositionY(posY);
 	textChinese->setString(agency.Base.Chinese);
-	posY -= textChinese->getContentSize().height + 4;
-
-	textEnglishFull->setPositionY(posY);
 	textEnglishFull->setString(agency.EnglishFullName);
-	posY -= textEnglishFull->getContentSize().height + 4;
-
-	textChineseFull->setPositionY(posY);
 	textChineseFull->setString(agency.ChineseFullName);
+
+	auto visibleSize = Director::getInstance()->getVisibleSize();
+	float line_spacing = 5;		//行间距5
+								//获取所有空间的实际渲染高度总和+5*行距，然后重新设置父控件大小
+	float height = textEnglish->getVirtualRendererSize().height + textChinese->getVirtualRendererSize().height + textEnglishFull->getVirtualRendererSize().height
+		+ textChineseFull->getVirtualRendererSize().height + 5 * line_spacing;
+	setContentSize(Size(visibleSize.width - 20, height));
+
+	//重新设置各text位置，设置y坐标就行
+	textEnglish->setPositionY(height);
+	textChinese->setPositionY(height - textEnglish->getVirtualRendererSize().height - line_spacing);
+	textEnglishFull->setPositionY(textChinese->getPositionY() - textChinese->getVirtualRendererSize().height - line_spacing);
+	textChineseFull->setPositionY(textEnglishFull->getPositionY() - textEnglishFull->getVirtualRendererSize().height - line_spacing);
 }
 
 bool VocabularyItem::init()
@@ -135,10 +138,8 @@ bool VocabularyItem::init()
 	auto origin = Director::getInstance()->getVisibleOrigin();
 	
 	float width = visibleSize.width - 20;
-	float height = 150.f;
+	float height = 50.f;
 	float textAreaWidth = width - 30;
-
-	auto anchor = Vec2(0.f, 1.f);
 
 	setContentSize(Size(width, height));
 
@@ -174,6 +175,7 @@ bool VocabularyItem::init()
 	textParaphrase->setPosition(Vec2(StartX, StartY));
 	addChild(textParaphrase, 1);
 
+	setLayoutType(Layout::Type::VERTICAL);
 	// 中文词汇
 	// 中文来源、条款号
 	// 说明
@@ -183,27 +185,29 @@ bool VocabularyItem::init()
 
 void VocabularyItem::updateView(const SVocabulary& vocabulary)
 {
-	float posY = textEnglish->getPositionY();
 	textEnglish->setString(vocabulary.Base.English);
-	posY -= textEnglish->getContentSize().height + 4;
 
-	textEnglishSourceNumber->setPositionY(posY);
 	textEnglishSourceNumber->setString(vocabulary.EnglishSource + " : " + vocabulary.EnglishNumber);
-	posY -= textEnglishSourceNumber->getContentSize().height + 4;
 
-	textChinese->setPositionY(posY);
 	textChinese->setString(vocabulary.Base.Chinese);
-	posY -= textChinese->getContentSize().height + 4;
 
-	textChineseSourceNumber->setPositionY(posY);
 	textChineseSourceNumber->setString(vocabulary.ChineseSource + " : " + vocabulary.ChineseNumber);
-	posY -= textChineseSourceNumber->getContentSize().height + 4;
 
-	textParaphrase->setPositionY(posY);
 	textParaphrase->setString(vocabulary.Paraphrase);
 
-	auto s = textParaphrase->getVirtualRendererSize();
-	float w = s.width;
+	auto visibleSize = Director::getInstance()->getVisibleSize();
+	float line_spacing = 5;		//行间距5
+								//获取所有空间的实际渲染高度总和+5*行距，然后重新设置父控件大小
+	float height = textEnglish->getVirtualRendererSize().height + textEnglishSourceNumber->getVirtualRendererSize().height + textChinese->getVirtualRendererSize().height
+		+ textChineseSourceNumber->getVirtualRendererSize().height + textParaphrase->getVirtualRendererSize().height + 5 * line_spacing;
+	setContentSize(Size(visibleSize.width - 20, height));
+
+	//重新设置各text位置，设置y坐标就行
+	textEnglish->setPositionY(height);
+	textEnglishSourceNumber->setPositionY(height - textEnglish->getVirtualRendererSize().height - line_spacing);
+	textChinese->setPositionY(textEnglishSourceNumber->getPositionY() - textEnglishSourceNumber->getVirtualRendererSize().height - line_spacing);
+	textChineseSourceNumber->setPositionY(textChinese->getPositionY() - textChinese->getVirtualRendererSize().height - line_spacing);
+	textParaphrase->setPositionY(textChineseSourceNumber->getPositionY() - textChineseSourceNumber->getVirtualRendererSize().height - line_spacing);
 }
 
 bool CountryGroupItem::init()
@@ -219,12 +223,11 @@ bool CountryGroupItem::init()
 	auto origin = Director::getInstance()->getVisibleOrigin();
 
 	float width = visibleSize.width - 20;
-	float height = 150.f;
+	float height = 50.f;
 	float textAreaWidth = width - 30;
 
 	setContentSize(Size(width, height));
 
-	auto anchor = Vec2(0.f, 1.f);
 	float StartX = getPositionX() + 10.f;
 	float StartY = getPositionY() + height - TEXT_LINE_HEIGHT;
 	// 缩写
@@ -254,23 +257,28 @@ bool CountryGroupItem::init()
 	textChinese->setPosition(Vec2(StartX, StartY));
 	addChild(textChinese, 1);
 
+	setLayoutType(Layout::Type::VERTICAL);
+
 	return true;
 }
 
 void CountryGroupItem::updateView(const SCountryGroup& group)
 {
-	float posY = textEnglish->getPositionY();
 	textEnglish->setString(group.Base.English);
-	posY -= textEnglish->getContentSize().height + 4;
-
-	textChinese->setPositionY(posY);
 	textChinese->setString(group.Base.Chinese);
-	posY -= textChinese->getContentSize().height + 4;
-
-	textEnglishFull->setPositionY(posY);
 	textEnglishFull->setString(group.EnglishFullName);
-	posY -= textEnglishFull->getContentSize().height + 4;
-
-	textChineseFull->setPositionY(posY);
 	textChineseFull->setString(group.ChineseFullName);
+
+	auto visibleSize = Director::getInstance()->getVisibleSize();
+	float line_spacing = 5;		//行间距5
+								//获取所有空间的实际渲染高度总和+5*行距，然后重新设置父控件大小
+	float height = textEnglish->getVirtualRendererSize().height + textChinese->getVirtualRendererSize().height + textEnglishFull->getVirtualRendererSize().height
+		+ textChineseFull->getVirtualRendererSize().height + 5 * line_spacing;
+	setContentSize(Size(visibleSize.width - 20, height));
+
+	//重新设置各text位置，设置y坐标就行
+	textEnglish->setPositionY(height);
+	textChinese->setPositionY(height - textEnglish->getVirtualRendererSize().height - line_spacing);
+	textEnglishFull->setPositionY(textChinese->getPositionY() - textChinese->getVirtualRendererSize().height - line_spacing);
+	textChineseFull->setPositionY(textEnglishFull->getPositionY() - textEnglishFull->getVirtualRendererSize().height - line_spacing);
 }

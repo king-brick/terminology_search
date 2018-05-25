@@ -50,7 +50,7 @@ bool ResultViewLayer::init()
 	_listView->setBackGroundImage("bk_output.png");
 	_listView->setBackGroundImageScale9Enabled(true);
 	_listView->setContentSize(visibleSize);
-	_listView->setPosition(Vec2(origin.x + (visibleSize.width - _listView->getContentSize().width) / 2,
+	_listView->setPosition(Vec2(origin.x + (visibleSize.width - _listView->getContentSize().width) / 2 + 5,
 		origin.y + visibleSize.height - _listView->getContentSize().height - button->getContentSize().height));
 	_listView->setScrollBarPositionFromCorner(Vec2(7, 7));
 	// set all items layout gravity
