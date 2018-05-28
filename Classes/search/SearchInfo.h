@@ -16,6 +16,12 @@ namespace MySearch
 // 文本行高度
 #define TEXT_LINE_HEIGHT (TEXT_RESULT_FONTSIZE + 2)
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+#define INPUT_BOX_HEIGHT (TEXT_INPUT_FONTSIZE + 10)
+#else
+#define INPUT_BOX_HEIGHT (TEXT_INPUT_FONTSIZE + 4)
+#endif
+
 // 名录类型
 enum EType
 {

@@ -36,18 +36,14 @@ Layout* MySearch::genDefaultItem(void)
 	default_text->setTextHorizontalAlignment(TextHAlignment::LEFT);
 	default_text->setTextColor(TEXT_COLOR);
 	default_text->setFontSize(10);
+	default_text->setTextAreaSize(Size(textAreaWidth, 12));
 	default_text->ignoreContentAdaptWithSize(false);
-	//initializeTextComponent(default_text, width, textAreaWidth);
 
 	auto default_item = Layout::create();
 	default_item->setTouchEnabled(true);
-	default_item->setContentSize(Size(width, 10));
+	default_item->setContentSize(Size(width, 12));
 
-	//float StartX = default_item->getPositionX() + 10.f;
-	//float StartY = default_item->getPositionY() + 1.0f;
-	//default_text->setPosition(Vec2(StartX, StartY));
 	default_text->setPosition(default_item->getContentSize()/2.0f);
-	default_text->setContentSize(default_item->getContentSize());
 	default_item->addChild(default_text, 1);
 
 	return default_item;

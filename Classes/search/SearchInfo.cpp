@@ -2,7 +2,7 @@
 #include "CSV.hpp"
 #include <iostream>
 #include "cocos2d.h"
-#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include <iconv.h>
 #endif
 

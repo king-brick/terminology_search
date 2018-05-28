@@ -21,7 +21,7 @@ bool SearchLayer::init()
     auto origin = Director::getInstance()->getVisibleOrigin();
     
 	// 创建输入框
-	inputEdit = EditBox::create(Size(visibleSize.width, TEXT_INPUT_FONTSIZE + 2), "bk_input.png");
+	inputEdit = EditBox::create(Size(visibleSize.width, INPUT_BOX_HEIGHT), "bk_input.png");
  	inputEdit->setFontSize(TEXT_INPUT_FONTSIZE);
  	inputEdit->setText("click here for input");
 	inputEdit->setFontColor(Color4B(40, 180, 50, 255));
@@ -218,9 +218,6 @@ void SearchLayer::updateResultView()
 		Text* txt = (Text*)item->getChildByName("Title Text");
 		if (txt)
 		{
-			// 设置宽度
-			txt->setTextAreaSize(Size(textAreaWidth, 10));
-
 			string content = r.Index + ",";
 			if (r.bEnglish)
 			{
