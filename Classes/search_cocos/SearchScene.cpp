@@ -73,6 +73,14 @@ bool SearchLayer::init()
     return true;
 }
 
+void SearchLayer::update(float delta)
+{
+	Layer::update(delta);
+
+	// 动态刷新listview
+	updateListView();
+}
+
 void SearchLayer::editBoxEditingDidBegin(EditBox* editBox)
 {
 	log("editBox %p DidBegin !", editBox);
@@ -191,15 +199,17 @@ void SearchLayer::updateResultView()
 	if (nullptr == _listView)
 		return;
 
+	// 清空缓存
+	ResultCache.clear();
 	// 移除掉所有子项
 	_listView->removeAllItems();
+	// 关闭心跳
+	unscheduleUpdate();
 
 	string input = inputEdit->getText();
 	// 输入为空时 不查找
 	if (input.empty())
 	{
-		// 清空缓存
-		ResultCache.clear();
 		return;
 	}
 	auto visibleSize = Director::getInstance()->getVisibleSize();
@@ -207,14 +217,34 @@ void SearchLayer::updateResultView()
 	float textAreaWidth = width - 10;
 
 	// 查找结果
-	float h = 0.f;
-	vector<SSimpleIndex> s = g_Dictionary.FindLikeAll(input);
-	for (auto r : s)
+	ResultCache = g_Dictionary.FindLikeAll(input);
+
+	// 启动心跳
+	if (ADD_ITEM_PERFRAME < ResultCache.size())
 	{
+		scheduleUpdate();
+	}
+
+	updateListView();
+	
+}
+
+void SearchLayer::updateListView()
+{
+	if (0 == ResultCache.size())
+	{
+		unscheduleUpdate();
+		return;
+	}
+
+	// 每次加载ADD_ITEM_PERFRAME个
+	int cacheCount = ResultCache.size();
+	auto loadCount = std::min(cacheCount, ADD_ITEM_PERFRAME);
+	for (int i = 0; i < loadCount; ++i)
+	{
+		auto r = ResultCache[i];
 		Widget* item = default_item->clone();
 		item->setName(r.Index);
-// 		item->setTag(r.ids[0].Id);
-// 		item->setUserData((void*)r.Index.c_str());
 		Text* txt = (Text*)item->getChildByName("Title Text");
 		if (txt)
 		{
@@ -235,11 +265,12 @@ void SearchLayer::updateResultView()
 			// 设置内容
 			txt->setString(content);
 		}
-		//h = txt->getContentSize().height;
-		//item->setContentSize(Size(item->getContentSize().width, h));
 
 		_listView->pushBackCustomItem(item);
 	}
+
+	// 移除加载项
+	ResultCache.erase(ResultCache.begin(), ResultCache.begin() + loadCount);
 
 	// set items margin
 	float spacing = 4;

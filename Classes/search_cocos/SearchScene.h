@@ -17,6 +17,7 @@ class SearchLayer : public Layer, public ui::EditBoxDelegate
 {
 public:
 	virtual bool init() override;
+	virtual void update(float delta) override;
 
 	virtual void editBoxEditingDidBegin(EditBox* editBox)override;
 	virtual void editBoxEditingDidEndWithAction(EditBox* editBox, EditBoxEndAction action)override;
@@ -37,6 +38,9 @@ protected:
 	void selectView(int selectId);
 	void selectView(const string& input);
 
+	// 按帧更新listview
+	void updateListView();
+
 public:
 	// 结果框关闭
 	void onResultViewClose(void);
@@ -49,7 +53,7 @@ protected:
 	// 默认组件
 	Layout* default_item;
 	// 缓存结果
-	std::vector<SVocabulary> ResultCache;
+	std::vector<SSimpleIndex> ResultCache;
 };
 }
 
