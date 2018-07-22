@@ -1,148 +1,136 @@
-﻿序号,国家,缩写名称,英文全称,中文译名
-1,毛里求斯,MAURITAS,Mauritias Accreditation Service ,
-2,埃塞俄比亚,ENAO,Ethiopian National Accreditation Office ,
-3,肯尼亚,KENAS,Kenya Accreditation Service,
-4,南非,SANAS,South African National Accreditation System,
-5,安哥拉,SADCAS,Southern African Development Community Accreditation Service,
-6,博茨瓦纳,SADCAS,Southern African Development Community Accreditation Service ,
-7,津巴布韦,SADCAS,Southern African Development Community Accreditation Service ,
-8,莱索托,SADCAS,Southern African Development Community Accreditation Service ,
-9,马拉维,SADCAS,Southern African Development Community Accreditation Service ,
-10,莫桑比克,SADCAS,Southern African Development Community Accreditation Service,
-11,纳米比亚,SADCAS,Southern African Development Community Accreditation Service,
-12,斯威士兰,SADCAS,Southern African Development Community Accreditation Service ,
-13,坦桑尼亚,SADCAS,Southern African Development Community Accreditation Service,
-14,赞比亚,SADCAS,Southern African Development Community Accreditation Service ,
-15,刚果（金）,SADCAS,Southern African Development Community Accreditation Service ,
-16,塞舌尔,SADCAS,Southern African Development Community Accreditation Service ,
-17,马达加斯加,SADCAS,Southern African Development Community Accreditation Service ,
-18,埃及,EGAC ,Egyptian Accreditation Council,
-19,突尼斯,TUNAC,Tunisian Accreditation Council,
-20,阿尔及利亚,ALGERAC,Organisme algérien d'accréditation,
-21,摩洛哥,SEMAC,Moroccan Accreditation Service,
-22,利比亚,LNCSM,Libyan National Center for Standization and Metrology ,
-23,毛里塔利亚,DNPQ,Direction de la Normalisation et de la Promotion de la Qualite,
-24,苏丹,SSMO,the State Service Management Office,
-25,伊拉克,COSQC,Central Organizaton for Standardization and Quality Control,
-26,约旦,JSMO,The Jordan Standards and Metrology Organization,
-27,以色列,ISRAC,Israel Laboratory Accreditation Authority,
-28,中国,CNAS,China National Accreditation Service for Conformity Assessment,中国合格评定国家认可中心
-29,中国香港,HKAS,Hong Kong Accreditation Servce,
-30,中国台湾,TAF,Taiwan Accreditation Foundation,财团法人全国认证基金会/中国台北认可机构
-31,印尼,KAN,The National Accreditation Body of Indonesia,
-32,伊朗,NACI,National Accreditation Centre of Iran,
-33,哈萨克斯坦,NCA,National Center of Accreditation,
-34,吉尔吉斯斯坦,KCA,Kyrgyz Center of Accreditation,
-35,马来西亚,,"Department of Standards Malaysia,Ministry of Science, Technology and Innovation",
-36,蒙古,MASM,Mongolian Agency for Standardization and Metrology,
-37,巴基斯坦,PNAC,Pakistan National Accreditation Council,
-38,菲律宾,PAO,Philippine Accreditation Office,
-39,新加坡,SAC  ,Singapore Accreeditation Counsil,
-40,斯里兰卡,SLAB,Sri Lanka Accreditation Board for Conformity Assessment,
-41,越南,BoA,Bureau of Accreditation,
-42,孟加拉,BAB,Bangladesh Accreditation Board,
-43,乌兹别克斯坦,Uzstandard Agency," Agency for Standardization, Metrology and Certification of Uzbekistan",
-44,朝鲜,,暂未查到,
-45,格鲁吉亚,GAC,Georgiana Center for Accreditation,
-46,墨西哥,EMA,Mexican Accreditation Entity,
-47,印度,NABCB,CB/IB: National Accreditation Board for Certification Bodies,
-48,印度,NABL ,LB: National Accreditation Board for Testing and Calibration Laboratories,
-49,日本,IAJAPAN,International Accreditation Japan,
-50,日本,JAB,The Japan Accreditation Board,
-51,日本,JASC,Japan Accreditation System for Product Certification Bodies of JIS Mark,
-52,日本,JIPDEC,Japan Information Processing Development Center-Information Management Systems Promotion Center Japan,
-53,日本,VLAC,Voluntary EMC Laboratory Accreditation Center,
-54,日本,JLA,Japan Laboratories Association,
-55,韩国,KAB,Korea Accreditation Board,
-56,韩国,KAS,Korea Accreditation Service,
-57,韩国,NIER,National Institute of Environmental Research,
-58,韩国,KOLAS,The Korea Laboratory Accreditation Scheme,
-59,泰国,NSC,National Standardisation Council of Thailand,
-60,泰国,DMSc,Department of Medical Sciences,
-61,泰国,DSS,Department of Science Service,
-62,黎巴嫩,COLIBAC,Lebanese Accreditation Council,
-63,巴勒斯坦,,Palestine Laboratories Accreditation Committee,
-64,也门,YSMO,"The Yemen Standardization, Metrology and Quality Control Organization",
-65,阿联酋,DAC,Dubai Accreditation Department,
-66,阿曼,,ODGSM,
-67,沙特阿拉伯,SASO,"The Saudi Standards, Metrology and Quality Organization",
-68,巴林,,GCC Accreditation Center,
-69,卡塔尔,,GCC Accreditation Center,
-70,科威特,,GCC Accreditation Center,
-71,挪威,NA,Norsk Akkreditering,
-72,奥地利,,AKKREDITIERUNG AUSTRIA,
-73,比利时,BELAC,Belgian Accreditation Council,
-74,丹麦,DANAK,Danish Accreditation,
-75,芬兰,FINAS,Finnish Accreditation Service,
-76,法国,COFRAC,Comité fran?ais d'accréditation,
-77,德国,DAkkS,Deutsche Akkreditierungsstelle GmbH,
-78,希腊,ESYD,Hellenic Accreditation System,
-79,爱尔兰,INAB,Irish National Accreditation Board,
-80,意大利,ACCREDIA,Ente Italiano di Accreditamento,
-81,卢森堡,OLAS,Office Luxembourgeois d'Accreditation et de Surveillance,
-82,荷兰,RVA,Raad voor Accreditatie,
-83,葡萄牙,IPAC,Instituto Português de Acredita??o,
-84,西班牙,ENAC,Entidad Nacional de Acreditación,
-85,瑞典,SWEDAC,Swedish Board for Accreditation and Conformity Assessment,
-86,英国,UKAS,United Kingdom Accreditation Service(UKAS),英国皇家认可委员会
-87,拉脱维亚,LATAK,Latvian National Accreditation Bureau,
-88,波兰,PCA,Polskie Centrum Akredytacji,
-89,捷克,CAI,Czech Accreditation Institute,
-90,斯洛文尼亚,SA,Slovenska akreditacija,
-91,斯洛伐克,SNAS,Slovak National Accreditation Service,
-92,爱沙尼亚,EAK,Estonian Accreditation Centre,
-93,立陶宛,LA,Lithuanian National Accreditation Bureau,
-94,马耳他,NAB-Malta,National Accreditation Board,
-95,塞浦路斯,CYS-CYSAB,Cyprus Organization for the Promotion of Quality,
-96,罗马尼亚,RENAR,Romanian Association for Accreditation,
-97,保加利亚,BAS,"Executive Agency ""BulgarianAccreditation Service""",
-98,克罗地亚,HAA,Croatian Accreditation Agency,
-99,土耳其,TURKAK?,Turkish Accreditation Agency,
-100,马其顿,IARM,The Accreditation Institute of the former Yugoslav Republic of Macedonia,
-101,瑞士,SAS,Swiss Accreditation Service,
-102,波斯尼亚和黑塞哥维那,BATA,Institute for Accreditation of Bosnia and Herzegovina,
-103,乌克兰,NAAU,National Accreditation Agency of Ukraine,
-104,塞尔维亚,ATS,Accreditation Body of Serbia,
-105,匈牙利,NAT,Hungarian Accreditation Board,
-106,阿尔巴尼亚,GDA,General Directorate of Accrediation,
-107,白俄罗斯,BSCA,Republican Unitary Enterprise,
-108,冰岛,ISAC,Icelandic Board for Technical Accreditation,
-109,黑山,ATCG,Accreditation Body of Montenegro,
-110,科索沃,DAK,Accreditation Directorate of Kosovo,
-111,摩尔多瓦,MOLDAC,National Center of Accreditation of the republic of Moldova,
-112,俄罗斯,,RusAccreditation,
-113,阿根廷,OAA,Argentine Accreditation Body,
-114,巴西,Cgcre,General Accreditation Coordination,
-115,智利,INN,National Standardization Institute,
-116,哥伦比亚,ONAC,National Accreditation Body of Colombia,
-117,哥斯达黎加,ECA ,Costarrican Accreditation Body,
-118,古巴,ONARC,National Accreditation Body of the Republic of Cuba,
-119,厄瓜多尔,SAE,Servicio de Acreditación Ecuatoriano,
-120,危地马拉,OGA,Guatemalan Accreditation Bureau,
-121,牙买加,JANAAC,Jamaica National Agency for Accreditation,
-122,尼加拉瓜,ONA,National Accreditation Bureau,
-123,巴拉圭,ONA,National Accreditation Body,
-124,秘鲁,INDECOPI - SNA,National Institute for the Defense of Competition and Protection of Intellectual Property,
-125,特立尼达和多巴哥,TTLABS,Trinidad & Tobago Laboratory Accreditation Services,
-126,乌拉圭,OUA,Uruguayan Accreditation Body,
-127,萨尔瓦多,OSA,Salvadoran Accreditation Body,
-128,巴拿马,CAN,National Accreditation Council,
-129,加拿大,SCC,Standards Council of Canada,
-130,加拿大,CALA,Canadian Association for Laboratory Accreditation Inc.,
-131,加拿大,IQMH,Institute for Quality Management in Healthcare,
-132,美国,ANSI ,American National Standards Institute,
-133,美国,IAS,International Accreditation Service,
-134,美国,,IOAS,
-135,美国,A2LA,American Association for Laboratory Accreditation,
-136,美国,AIHA-LAP,"American Industrial Hygiene Association, Laboratory Accreditation Program, LLC",
-137,美国,ANAB,ANSI-ASQ National Accreditation Board,
-138,美国,ASCLD/LAB,American Society of Crime Laboratory Directors / Laboratory Accreditation Board,
-139,美国,NVLAP,National Voluntary Laboratory Accreditation Program,
-140,美国,ASB,"Laboratory Accreditation Bureau (L-A-B), Accreditation Service Bereau",
-141,美国,PJLA,"Perry Johnson Laboratory Accreditation, Inc.",
-142,美国,AIHA-LAP, the American Industrial Hygiene Association Laboratory Accreditation Program,
-143,新西兰,JAS-ANZ,Joint Accreditation System of Australia and New Zealand,
-144,新西兰,IANZ,International Accreditation New Zealand,
-145,澳大利亚,JAS-ANZ,Joint Accreditation System of Australia and New Zealand,
-146,澳大利亚,NATA,National Association of Testing Authorities,
-147,巴布亚新几内亚,PNGLAS,Papua New Guinea Laboratory Accreditation Scheme,
+﻿序号,洲,国家,英文全称,英文缩写,中文译名,完成人
+1,非洲,毛里求斯,Mauritias Accreditation Service ,MAURITAS,毛里求斯认可服务机构,唐伟
+2,非洲,埃塞俄比亚,Ethiopian National Accreditation Office ,ENAO,埃塞俄比亚国家认可办公室,唐伟
+3,非洲,肯尼亚,Kenya Accreditation Service,KENAS ,肯尼亚认可服务机构,唐伟
+4,非洲,南非,South African National Accreditation System,SANAS,南非国家认可体系,唐伟
+5,非洲,安哥拉、博茨瓦纳、津巴布韦、莱索托、马拉维、莫桑比克、纳米比亚、斯威士兰、坦桑尼亚、赞比亚、刚果（金）、塞舌尔、马达加斯加,Southern African Development Community Accreditation Service ,SADCAS,南部非洲发展共同体认可服务机构,唐伟
+6,非洲,刚果（金）,Association Congolaise des Laboratoires,ASCOLAB,刚果实验室协会,唐伟
+7,非洲,埃及,Egyptian Accreditation Council, EGAC,埃及认可委员会,唐伟
+8,非洲,突尼斯,Tunisian Accreditation Council  ,TUNAC,突尼斯认可委员会,唐伟
+9,非洲,阿尔及利亚,Algerian Accreditation Body/Organisme algérien d'accréditation ,ALGERAC,阿尔及利亚国家认可机构,唐伟
+10,非洲,摩洛哥,Moroccan Accreditation Service, SEMAC,摩洛哥认可服务机构,唐伟
+11,非洲,利比亚,Libyan National Center for Standization and Metrology ,LNCSM,利比亚标准化和计量国家中心,唐伟
+12,非洲,毛里塔尼亚,Direction de la Normalisation/r/net de la Promotion de la Qualité  ,DNPQ,标准化及质量提升指导委员会,唐伟
+13,非洲,苏丹,Soudanaise Accreditation Council     ,SDAC ,苏丹认可委员会,唐伟
+14,亚洲,伊拉克,Iraqi Accreditation System,IQAS,伊拉克认可体系,唐伟
+15,亚洲,约旦,Jordan Accreditation & Standardization Systems - Accreditation Unit,JAS-AU,约旦认可和标准化体系-认可机构,唐伟
+16,亚洲,以色列,Israel Laboratory Accreditation Authority,ISRAC ,以色列实验室认可局,唐伟
+17,亚洲,中国,China National Accreditation Service for Conformity Assessment,CNAS,中国合格评定国家认可中心,唐伟
+18,亚洲,中国香港,Hong Kong Accreditation Servce ,HKAS,中国香港认可处,唐伟
+19,亚洲,中国台湾,Taiwan Accreditation Foundation,TAF,中国台北认可机构,唐伟
+20,亚洲,印尼,National Accreditation Body of Indonesia ,KAN,印度尼西亚国家认可机构,唐伟
+21,亚洲,伊朗,National Accreditation Center of Iran,NACI,伊朗国家认可中心,唐伟
+22,亚洲,哈萨克斯坦,National Center of Accreditation ,NCA,哈萨克斯坦国家认可中心,唐伟
+23,亚洲,吉尔吉斯斯坦,the Kyrgyz Center of Accreditation,KCA,吉尔吉斯认可中心,唐伟
+24,亚洲,马来西亚,Department of Standards Malaysia,Standards Malaysia,马来西亚标准局,唐伟
+25,亚洲,蒙古,Mongolian Agency for Standardization and Metrology;Accreditation Department,MNAS,蒙古标准化与计量局认可部,唐伟
+26,亚洲,巴基斯坦,Pakistan National Accreditation Council,PNAC,巴基斯坦国家认可委员会,唐伟
+27,亚洲,菲律宾,Philippine Accreditation Bureau,PAB,菲律宾认可局,唐伟
+28,亚洲,新加坡,Singapore Accreeditation Counsil  ,SAC,新加坡认可委员会,唐伟
+29,亚洲,斯里兰卡,Sri Lanka Accreditation Board for Conformity Assessment,SLAB,斯里兰卡合格评定认可委员会,唐伟
+30,亚洲,越南,Bureau of Accreditation ,BoA,越南认可局,唐伟
+31,亚洲,越南,Accreditation Office for Standards Conformity Assessment Capacity,AOSC,越南标准合格评定能力认可办公室,唐伟
+32,亚洲,孟加拉,Bangladesh Accreditation Board,BAB,孟加拉认可委员会,唐伟
+33,亚洲,乌兹别克斯坦, Agency for Standardization， Metrology and Certification of Uzbekistan ,Uzstandard,乌兹别克斯坦标准化、计量与认证局,唐伟
+34,亚洲,格鲁吉亚,Georgiana Center for Accreditation,GAC,格鲁吉亚认可中心,唐伟
+35,亚洲,黎巴嫩,Lebanese Accreditation Council ,COLIBAC,黎巴嫩认可委员会,唐伟
+36,亚洲,巴勒斯坦,Palestinian Accreditation Laboratory Committee ,PALAC,巴基斯坦实验室认可委员会,唐伟
+37,亚洲,也门,Yemeni Accreditation Unit /r/nYemen Standardization;/r/nMetrology and Quality Control Organization,YAU,也门标准化、计量与质量控制机构认可部,唐伟
+38,亚洲,阿联酋,Dubai Accreditation Department,DAC,迪拜认可处,唐伟
+39,亚洲,阿曼苏丹国,Accreditation Unit Directorate General/r/nfor Standards and Metrology/r/nMinistry of Commerce and Industry,/,阿曼苏丹商工部标准与计量局认可处,唐伟
+40,亚洲,沙特阿拉伯,Saudi Standards; Metrology and Quality Org.,SASO,沙特标准、计量与质量局,唐伟
+41,亚洲,海湾合作委员会国家（成员国包括：阿联酋、阿曼、巴林、卡塔尔、科威特和沙特阿拉伯、也门）,Gulf Cooperation Council Accreditation Center ,GAC,海湾合作委员会认可中心,唐伟
+42,亚洲,泰国,National Standardisation Council of Thailand,NSC,泰国国家标准化委员会,唐伟
+43,亚洲,印度,National Accreditation Board for Certification Bodies ,NABCB,印度认证机构国家认可委员会,唐伟
+44,亚洲,印度,National Accreditation Board for Testing and Calibration Laboratories , NABL,印度检测和校准实验室国家认可委员会,唐伟
+45,亚洲,日本,International Accreditation Japan,IAJAPAN,日本国际认可,唐伟
+46,亚洲,日本,The Japan Accreditation Board,JAB,日本认可委员会,唐伟
+47,亚洲,日本,Japan Accreditation System for Product Certification Bodies of JIS Mark   ,JASC,日本JIS标识产品认证机构认可体系,唐伟
+48,亚洲,日本,ISMS Accreditation Center ,ISMS-AC,日本信息安全管理体系认可中心,唐伟
+49,亚洲,日本,Voluntary EMC Laboratory Accreditation Center INC ,VLAC,日本自愿性电磁兼容实验室认可中心,唐伟
+50,亚洲,日本,Japan Laboratories Association,JLA,日本实验室协会,唐伟
+51,亚洲,韩国,Korea Accreditation Board,KAB,韩国认可委员会,唐伟
+52,亚洲,韩国,Korea Accreditation Service,KAS,韩国认可服务机构,唐伟
+53,亚洲,韩国,National Institute of Environmental Research ,NIER,韩国国家环境研究院,唐伟
+54,亚洲,韩国,Korea Laboratory Accreditation Scheme ,KOLAS,韩国实验室认可机构,唐伟
+55,亚洲,阿塞拜疆,Azerbaijan Accreditation Centre,AZAK,阿塞拜疆认可中心,唐伟
+56,欧洲,挪威,Norwegian Accreditation ,NA,挪威认可,唐伟
+57,欧洲,奥地利,Akkreditierung Austria,/,奥地利认可,唐伟
+58,欧洲,比利时,Belgian Accreditation Structure,BELAC,比利时认可机构,唐伟
+59,欧洲,丹麦,Danish Accreditation,DANAK,丹麦认可,唐伟
+60,欧洲,芬兰,Finnish Accreditation Service,FINAS,芬兰认可服务机构,唐伟
+61,欧洲,法国,Comite Francais d'Accreditation,COFRAC,法国认可委员会,唐伟
+62,欧洲,德国,Deutsche Akkreditierungsstelle GmbH,DAkkS,德意志认可有限公司,唐伟
+63,欧洲,希腊, Hellenic Accreditation System ,ESYD,希腊认可体系,唐伟
+64,欧洲,爱尔兰,Irish National Accreditation Board, INAB,爱尔兰国家认可委员会,唐伟
+65,欧洲,意大利, L’Ente Italiano di Accreditamento,ACCREDIA ,意大利国家认可机构,唐伟
+66,欧洲,卢森堡, Luxembourg Office of Accreditation/Office Luxembourgeois d'Accreditation et de Surveillance,OLAS,卢森堡认可办公室,唐伟
+67,欧洲,荷兰,Dutch Accreditation Council /Raad Voor Accreditatie ,RvA,荷兰认可委员会,唐伟
+68,欧洲,葡萄牙, Portuguese Institute for Accreditation /Instituto Portugues de Acreditacao,IPAC ,葡萄牙认可机构,唐伟
+69,欧洲,西班牙,Entidad Nacional de Acreditacion,ENAC,西班牙国家认可机构,唐伟
+70,欧洲,瑞典,Swedish Board for Accreditation and Conformity Assessment,SWEDAC,瑞典合格评定认可委员会,唐伟
+71,欧洲,英国, United Kingdom Accreditation Service ,UKAS,英国认可服务机构,唐伟
+72,欧洲,拉脱维亚,Latvian National Accreditation Bureau,LATAK,拉脱维亚国家认可局,唐伟
+73,欧洲,波兰,Polish Centre for Accreditation ,PCA ,波兰认可中心,唐伟
+74,欧洲,捷克,Czech Accreditation Institute,CAI,捷克认可机构,唐伟
+75,欧洲,斯洛文尼亚,Slovenian Accreditation/Slovenska akreditacija ,SA,斯洛文尼亚认可,唐伟
+76,欧洲,斯洛伐克,Slovak National Accreditation Service,SNAS,斯洛伐克国家认可服务机构,唐伟
+77,欧洲,爱沙尼亚,Estonian Accreditation Centre,EAK,爱沙尼亚认可中心,唐伟
+78,欧洲,立陶宛,Lithuanian National Accreditation Bureau,LA,立陶宛国家认可局,唐伟
+79,欧洲,马耳他,National Accreditation Board,NAB-Malta,马耳他国家认可委员会,唐伟
+80,欧洲,塞浦路斯,Cyprus Organization for the Promotion of Quality,CYS-CYSAB,塞浦路斯质量促进机构,唐伟
+81,欧洲,罗马尼亚, Romanian Accreditation Association /Asociatia de Acreditare din Romania ,RENAR  ,罗马尼亚认可协会,唐伟
+82,欧洲,保加利亚,Executive Agency - Bulgarian Accreditation Service, EA-BAS ,保加利亚认可服务机构—执行部,唐伟
+83,欧洲,克罗地亚,Croatian Accreditation Agency,HAA,克罗地亚认可机构,唐伟
+84,欧洲,土耳其,Turkish Accreditation Agency, TURKAK ,土耳其认可机构,唐伟
+85,欧洲,马其顿, Institute for Accreditation of the Republic of Macedonia, IARM ,马其顿共和国认可机构,唐伟
+86,欧洲,瑞士,Swiss Accreditation Service,SAS,瑞士认可服务机构,唐伟
+87,欧洲,波黑,Institute for Accreditation of Bosnia and Herzegovina,BATA,波斯尼亚和黑塞哥维那认可机构,唐伟
+88,欧洲,乌克兰, National Accreditation Agency of Ukraine, NAAU,乌克兰国家认可机构,唐伟
+89,欧洲,塞尔维亚,Accreditation Body of Serbia,ATS,塞尔维亚认可机构,唐伟
+90,欧洲,匈牙利, National Accreditation Authority,NAH  ,匈牙利国家认可机构,唐伟
+91,欧洲,阿尔巴尼亚, General Directorate of Accreditation ,DPA,阿尔巴尼亚认可局,唐伟
+92,欧洲,白俄罗斯, Belarusian State Centre for Accreditation , BSCA ,白俄罗斯认可中心,唐伟
+93,欧洲,冰岛,Icelandic Board for Technical Accreditation ,ISAC,冰岛技术认可委员会,唐伟
+94,欧洲,黑山,Accreditation Body of Montenegro,ATCG,黑山共和国认可机构,唐伟
+95,欧洲,科索沃,Kosovo Accreditation Directorate, DAK,科索沃认可局,唐伟
+96,欧洲,摩尔多瓦,National Accreditation Center of the republic of Moldova  ,MOLDAC,摩尔多瓦共和国国家认可中心,唐伟
+97,欧洲,俄罗斯,Federal Service for Accreditation,RusAccreditation,俄罗斯联邦认可局,唐伟
+98,欧洲,俄罗斯, Scientific Technical Centre on Industrial Safety ,STC-IS,俄罗斯工业安全科技中心,唐伟
+99,美洲,墨西哥, Mexican Accreditation Entity/Entidad Mexicana de Acreditacion ,EMA,墨西哥认可机构,唐伟
+100,美洲,阿根廷,Organismo Argentino de Acreditacion ,OAA,阿根廷认可机构,唐伟
+101,美洲,巴西,General Coordination for Accreditation/Coordenacao Geral de Acreditacao ,Cgcre,巴西认可综合协调机构,唐伟
+102,美洲,智利,National Standardization Institute/Instituto Nacional de Normalizacion ,INN,智利国家标准化机构,唐伟
+103,美洲,哥伦比亚,National Accreditation Body of Colombia/Organismo Nacional de Acreditación de Colombia  , ONAC,哥伦比亚国家认可机构,唐伟
+104,美洲,哥斯达黎加, Costa Rican Accreditation Entity/Ente Costarricense de Acreditación    ,ECA,哥斯达黎加认可机构,唐伟
+105,美洲,古巴,National Accreditation Body of the Republic of Cuba/Organo Nacional de Acreditación de la República de Cuba,ONARC,古巴共和国国家认可机构,唐伟
+106,美洲,厄瓜多尔,Ecuadorian Accreditation Service/Servicio de Acreditación Ecuatoriano ,SAE,厄瓜多尔认可服务机构,唐伟
+107,美洲,危地马拉,Guatemalan Accreditation Bureau/Oficina Guatemalteca de Acreditación ?,OGA,危地马拉认可局,唐伟
+108,美洲,牙买加,Jamaica National Agency for Accreditation, JANAAC,牙买加国家认可机构,唐伟
+109,美洲,尼加拉瓜,National Accreditation Office/Oficina Nacional de Acreditación,ONA,尼加拉瓜国家认可办公室,唐伟
+110,美洲,巴拉圭,National Accreditation Body/ Organismo Nacional de Acreditación ,ONA,巴拉圭国家认可机构,唐伟
+111,美洲,秘鲁,National Institute of Quality-Directorate of Accreditation , INACAL-DA ,秘鲁国家质量机构—认可处,唐伟
+112,美洲,特立尼达和多巴哥,Trinidad & Tobago Laboratory Accreditation Services ,TTLABS,特立尼达和多巴哥实验室认可服务机构,唐伟
+113,美洲,乌拉圭,Uruguayan Accreditation Body/Organismo Uruguayo de Acreditacion, OUA,乌拉圭认可机构,唐伟
+114,美洲,多明尼加,Dominican Accreditation Body/Organismo Dominicano de Acreditación ,ODAC,多明尼加认可机构,唐伟
+115,美洲,巴拿马,National Accreditation Council/Consejo Nacional de Acreditación , CAN,巴拿马国家认可委员会,唐伟
+116,美洲,萨尔瓦多,Salvadoran Accreditation Body/Organismo Salvadore?o de Acreditación,OSA,萨尔瓦多认可机构,唐伟
+117,美洲,洪都拉斯,Organismo Hondure?o de Acreditación ,OHA,洪都拉斯认可机构,唐伟
+118,美洲,加拿大,Standards Council of Canada, SCC ,加拿大标准委员会,唐伟
+119,美洲,加拿大,Canadian Association for Laboratory Accreditation Inc.,CALA,加拿大实验室认可协会,唐伟
+120,美洲,加拿大,Institute for Quality Management in Healthcare,IQMH,加拿大医疗保健质量管理研究所,唐伟
+121,美洲,美国,American National Standards Institute ,ANSI ,美国国家标准学会,唐伟
+122,美洲,美国,International Accreditation Service ,IAS   ,美国国际认可服务机构,唐伟
+123,美洲,美国, International Organic Accreditation Service,IOAS,美国国际有机认可服务机构,唐伟
+124,美洲,美国,American Association for Laboratory Accreditation ,A2LA,美国实验室认可协会,唐伟
+125,美洲,美国,American National Standards Institute—American Society for Quality—National Accreditation Board LLC ,ANSI-ASQ-ANAB,美国国家标准学会-美国质量协会-美国国家认可委员会,唐伟
+126,美洲,美国,Association of Official Analytical Chemists AOAC International,AOAC,国际AOAC官方分析化学家协会,唐伟
+127,美洲,美国,National Voluntary Laboratory Accreditation Program, NVLAP,美国国家自愿性实验室认可程序,唐伟
+128,美洲,美国,Perry Johnson Laboratory Accreditation; Inc ,PJLA,佩里·约翰逊实验室认可公司,唐伟
+129,美洲,美国,American Industrial Hygiene Association; Laboratory Accreditation Program, AIHA-LAP,美国工业卫生协会—实验室认可程序,唐伟
+130,美洲,美国, United Accreditation Foundation, UAF,美国认可基金会,唐伟
+131,美洲,美国,American Council of Independent Laboratories,ACIL,美国独立实验室委员会,唐伟
+132,大洋洲,巴布亚新几内亚,Papua New Guinea Laboratory Accreditation Scheme,PNGLAS,巴布亚新几内亚认可计划,唐伟
+133,大洋洲,新西兰,International Accreditation New Zealand,IANZ,新西兰国际认可,唐伟
+134,大洋洲,澳大利亚、新西兰,Joint Accreditation System of Australia and New Zealand,JAS-ANZ,澳大利亚和新西兰联合认可体系,唐伟
+135,大洋洲,澳大利亚,National Association of Testing Authorities; Australia,NATA,澳大利亚国家检测机构协会,唐伟

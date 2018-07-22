@@ -98,6 +98,7 @@ vector<SSimpleIndex> DictionaryManager::FindLikeAll(string input)
 					for (auto e : CacheSearchResult)
 					{
 						string key = e.Index;
+						std::transform(key.begin(), key.end(), key.begin(), ::tolower);
 						if (key.size() < SearchSize)
 							continue;
 
@@ -277,7 +278,7 @@ void DictionaryManager::LoadVocabulary()
 
 	auto data = getFileData(c_str_vocabulary_file.c_str());
 	// 读行
-	auto lines = splitString(data, "\r");
+	auto lines = splitString(data, "\r\n");
 
 	// 拆分行
 	for (int i = 1; i < lines.size(); ++i)
@@ -371,7 +372,7 @@ void DictionaryManager::LoadAgency()
 
 	auto data = getFileData(c_str_agency_file.c_str());
 	// 读行
-	auto lines = splitString(data, "\r");
+	auto lines = splitString(data, "\r\n");
 
 	// 拆分行
 	for (int i = 1; i < lines.size(); ++i)
@@ -385,6 +386,7 @@ void DictionaryManager::LoadAgency()
 		s.Base.Chinese = fields[1];
 		s.Base.English = fields[2];
 		s.EnglishFullName = fields[3];
+		s.ChineseFullName = fields[4];
 
 		AllAgency.insert(make_pair(s.Base.id, s));
 		Add2AllIndex(s.Base, EType::Agency);
@@ -452,7 +454,7 @@ void DictionaryManager::LoadGroup()
 
 	auto data = getFileData(c_str_group_file.c_str());
 	// 读行
-	auto lines = splitString(data, "\r");
+	auto lines = splitString(data, "\r\n");
 
 	// 拆分行
 	for (int i = 1; i < lines.size(); ++i)
@@ -466,6 +468,7 @@ void DictionaryManager::LoadGroup()
 		s.Base.Chinese = fields[1];
 		s.Base.English = fields[2];
 		s.EnglishFullName = fields[3];
+		s.ChineseFullName = fields[4];
 
 		AllGroup.insert(make_pair(s.Base.id, s));
 		Add2AllIndex(s.Base, EType::Group);
@@ -533,7 +536,9 @@ void DictionaryManager::Add2AllIndex(const RecordBase& record, EType type)
 	// 英文名
 	if (!record.English.empty())
 	{
-		map<string, SSimpleIndex>::iterator result = AllIndex.find(record.English);
+		string index = record.English;
+		transform(index.begin(), index.end(), index.begin(), ::tolower);
+		map<string, SSimpleIndex>::iterator result = AllIndex.find(index);
 		if (AllIndex.end() == result)
 		{
 			SSimpleIndex s;
@@ -541,11 +546,11 @@ void DictionaryManager::Add2AllIndex(const RecordBase& record, EType type)
 			s.bEnglish = true;
 			s.Base = record;
 			s.ids.push_back(idx);
-			AllIndex.insert(make_pair(record.English, s));
+			AllIndex.insert(make_pair(index, s));
 		}
 		else
 		{
-			AllIndex[record.English].ids.push_back(idx);
+			AllIndex[index].ids.push_back(idx);
 		}
 	}
 	// 中文名

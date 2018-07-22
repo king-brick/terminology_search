@@ -4,6 +4,7 @@
 #include "ui/UIImageView.h"
 #include "ResultView.h"
 #include "SearchViewItem.h"
+#include <algorithm>
 
 using namespace MySearch;
 
@@ -217,6 +218,7 @@ void SearchLayer::updateResultView()
 	float textAreaWidth = width - 10;
 
 	// 查找结果
+	std::transform(input.begin(), input.end(), input.begin(), ::tolower);
 	ResultCache = g_Dictionary.FindLikeAll(input);
 
 	// 启动心跳

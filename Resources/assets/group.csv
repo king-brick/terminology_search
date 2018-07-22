@@ -1,15 +1,15 @@
 ﻿序号,国家/地区,缩写名称,英文全称,中文译名,完成人
-1,,,Codex Alimentarius Commission,国际食品法典委员会,田燕超
+1,国际,,Codex Alimentarius Commission,国际食品法典委员会,田燕超
 2,国际,OECD,the Organization for Economic Co-operation and Development,经济合作与发展组织,吴孝槐
 3,美国, AALAS,American Association for Laboratory Animal Science,美国实验动物学会,吴孝槐
-4,,VIM,International?Vocabulary?of?Basic?and?General?Terms?in?Metrology,国际通用计量学基本术语,傅华栋
-5,,BIPM,International?Bureau?of?Weight?and?Measures,国际计量局,傅华栋
-6,,IEC,International Electrotechnical Commission,国际电工委员会,傅华栋
-7,,IFCC,International Federation of Clinical Chemistry and laboratory medicine,国际临床化学和实验室医学联合会,傅华栋
-8,,ISO,International Organization for Standardization,国际标准化组织,傅华栋
-9,,IUPAC,International Union of Pure and Applied Chemistry,国际理论化学和应用化学联合会,傅华栋
-10,,IUPAP,International Union of Pure and Applied Physics,国际理论物理和应用物理联合会,傅华栋
-11,,OIML,International Organization of Legal Metrology,国际法制计量组织,傅华栋
+4,国际,VIM,International?Vocabulary?of?Basic?and?General?Terms?in?Metrology,国际通用计量学基本术语,傅华栋
+5,国际,BIPM,International?Bureau?of?Weight?and?Measures,国际计量局,傅华栋
+6,国际,IEC,International Electrotechnical Commission,国际电工委员会,傅华栋
+7,国际,IFCC,International Federation of Clinical Chemistry and laboratory medicine,国际临床化学和实验室医学联合会,傅华栋
+8,国际,ISO,International Organization for Standardization,国际标准化组织,傅华栋
+9,国际,IUPAC,International Union of Pure and Applied Chemistry,国际理论化学和应用化学联合会,傅华栋
+10,国际,IUPAP,International Union of Pure and Applied Physics,国际理论物理和应用物理联合会,傅华栋
+11,国际,OIML,International Organization of Legal Metrology,国际法制计量组织,傅华栋
 12,美国,ASTM,American Society for Testing and Materials,美国材料与试验协会,傅华栋
 13,美国,ASME,American Society of Mechanical Engineers,美国机械工程师学会,傅华栋
 14,欧洲,CEN,European Committee for Standardization ,欧洲标准委员会,傅华栋
@@ -20,21 +20,21 @@
 19,美国,API,American Petroleum Institute,美国石油学会,傅华栋
 20,美国,SAE,Society of Automotive Engineers,美国汽车工程师学会,傅华栋
 21,日本,,Japanese Standard Association,日本标准协会,傅华栋
-22,,CIPM,International Committee for Weights and Measures,国际计量委员会,安平
+22,国际,CIPM,International Committee for Weights and Measures,国际计量委员会,安平
 23,,NMI,National  Metrology Institute,国家计量院,安平
-24,,EPA,Environmental Protection Agency,美国环保署,安平
-25,,APMP,Asia Pacific Metrology Programme,亚太计量规划组织,安平
-26,,BIPM,International Bureau of Weights and Measures,国际计量局,安平
-27,,CGPM,General Conference of Weights & Measures,国际计量大会,安平
-28,,OIML,International Organization of Legal Metrology,国际法制计量组织,安平
-29,,BIML,International Bureau of Legal Metrology,国际法制计量局,安平
-30,,IMEKO,International Measurement Confederation,国际计量技术联合会,安平
-31,,JCGM,Joint Committee for Guides in Metrology,国际计量学指南联合委员会,安平
-32,,JCRB,Joint Committee of the Regional Metrology Organizations and the BIPM,区域计量组织与国际计量局联合委员会,安平
-33,,IFCC,International Federation of Clinical Chemistry and Laboratory Medicine,国际临床化学和实验室医学联盟,安平
-34,,JCTLM,Joint Committee for Traceability in Laboratory Medicion,国际检验医学溯源联合委员会,安平
-35,,NIM,"National Institute of Metrology, China",中国国家计量院,安平
-36,,WADA,World Anti-Doping Agency,世界反兴奋剂机构,安平
+24,美国,EPA,Environmental Protection Agency,美国环保署,安平
+25,亚太,APMP,Asia Pacific Metrology Programme,亚太计量规划组织,安平
+26,国际,BIPM,International Bureau of Weights and Measures,国际计量局,安平
+27,国际,CGPM,General Conference of Weights & Measures,国际计量大会,安平
+28,国际,OIML,International Organization of Legal Metrology,国际法制计量组织,安平
+29,国际,BIML,International Bureau of Legal Metrology,国际法制计量局,安平
+30,国际,IMEKO,International Measurement Confederation,国际计量技术联合会,安平
+31,国际,JCGM,Joint Committee for Guides in Metrology,国际计量学指南联合委员会,安平
+32,区域,JCRB,Joint Committee of the Regional Metrology Organizations and the BIPM,区域计量组织与国际计量局联合委员会,安平
+33,国际,IFCC,International Federation of Clinical Chemistry and Laboratory Medicine,国际临床化学和实验室医学联盟,安平
+34,国际,JCTLM,Joint Committee for Traceability in Laboratory Medicion,国际检验医学溯源联合委员会,安平
+35,中国,NIM,"National Institute of Metrology, China",中国国家计量院,安平
+36,国际,WADA,World Anti-Doping Agency,世界反兴奋剂机构,安平
 37,美国,ABSA,The American Biological Safety Association,美国生物安全协会,王荣
 38,欧洲,EBSA,European Biosafety Association,欧洲生物安全协会,王荣
 39,亚太,A-PBA,Asia-Pacific Biosafety Sociation,亚太生物安全协会,王荣
@@ -57,15 +57,15 @@
 56,国际,IEC/CAB,International Electrotechnical Commission / Conformity Assessment Board,国际电工委员会合格评定局,陈丹丹
 57,国际,IEC CB,Internation Electro-technical Commission Certification Body,国际电工委员会认证机构,赵欢
 58,国际,GATT,General Agreement on Tariffs and Trade,关税及贸易总协定,赵欢
-59,国际,BIPM①,Bureau International des Poids et Mesures（法语）,国际计量局,陈丹丹
-,,,(*International Bureau of Weights and Measures),,陈丹丹
+59,国际,BIPM①,"(*International Bureau of Weights and Measures)
+Bureau International des Poids et Mesures（法语）",国际计量局,陈丹丹
 60,国际,IMEKO,International Measurement Confederation,国际计量技术联合会,陈丹丹
-61,国际,OIML②,Organisation Internationale de Métrologie Légale （法语）,国际法制计量组织,陈丹丹
-,,,(International Organization of Legal Metrology),,陈丹丹
-62,国际,BIML③,Bureau Internationale de Métrologie Légale （法语）,国际法制计量局,陈丹丹
-,,,( International Bureau of Legal Metrology),,陈丹丹
-63,国际,CIPM④,Comité international des poids et mesures （法语）,国际计量委员会,陈丹丹
-,,,(International Committee for Weights and Measures),,陈丹丹
+61,国际,OIML②,"(International Organization of Legal Metrology)
+Organisation Internationale de Métrologie Légale （法语）",国际法制计量组织,陈丹丹
+62,国际,BIML③,"( International Bureau of Legal Metrology)
+Bureau Internationale de Métrologie Légale （法语）",国际法制计量局,陈丹丹
+63,国际,CIPM④,"(International Committee for Weights and Measures)
+Comité international des poids et mesures （法语）",国际计量委员会,陈丹丹
 64,国际,JCRB,Joint Committee of the Regional Metrology Organizations and the BIPM,区域计量组织与国际计量局联合委员会,陈丹丹
 65,国际,JCGM,Joint Committee for Guides in Metrology,国际计量学指南联合委员会,陈丹丹
 66,国际,JCTLM,Joint Committee for Traceability in Laboratory Medicine,国际检验医学溯源联合委员会,陈丹丹
@@ -98,8 +98,8 @@
 93,亚太,PAC,Pacific Accreditation Cooperation,太平洋认可合作组织,陈丹丹
 94,亚太,FSCF,Food Safety Cooperation Forum,食品安全合作论坛,陈丹丹
 95,亚太,PAC/PCWG,Pacific Accreditation Cooperation/Product Certification working group,太平洋认可合作组织产品认证工作组,陈丹丹
-96,欧洲,CEN⑤,Comité Européen de Normalisation （法语）,欧洲标准化委员会,陈丹丹
-,,,(European Committee for Standardization),,陈丹丹
+96,欧洲,CEN⑤,"(European Committee for Standardization)
+Comité Européen de Normalisation （法语）",欧洲标准化委员会,陈丹丹
 97,欧洲,EA,European co-operation for Accreditation,欧洲认可合作组织,陈丹丹
 98,欧洲,ENFSI,European Network of Forensic Science Institutes,欧洲法庭科学研究机构,陈丹丹
 99,欧洲,EUREP,Euro-Retailer Produce Working Group,欧洲零售商农产品工作组,陈丹丹
@@ -151,16 +151,20 @@
 145,美国,CAP,College of American Pathologists,美国病理学家学会,周亚莉
 146,中国,NCCL,national center for clinical laboratories,卫生部临床检验中心,周亚莉
 147,中国,SFDA,State Food and Drug Administration,?国家食品药品监督管理局,周亚莉
-148,中国,,,卫生部临床检验标准专业委员会,周亚莉
-149,中国,,Chinese Medical Association,中华医学会,周亚莉
-150,中国,,National Health and Family Planning Commission,国家卫生和计划生育委员会,周婕
-151,美国,AOAC,Association of Official Analytical Chemists,美国分析化学家协会,周婕
-152,欧洲,Eurochem,,欧洲分析化学协会,周婕
-153,,CITAC,Cooperation on International Traceability in Analytical Chemistry,国际分析化学溯源合作组织,周婕
-154,,IUPAC,International Union of Pure and Applied Chemistry,国际理论（化学）与应用化学联合会,周婕
-155,,OIE,"World Organisation for Animal Health
+148,中国,,Chinese Medical Association,中华医学会,周亚莉
+149,中国,,National Health and Family Planning Commission,国家卫生和计划生育委员会,周婕
+150,美国,AOAC,Association of Official Analytical Chemists,美国分析化学家协会,周婕
+151,欧洲,Eurochem,,欧洲分析化学协会,周婕
+152,国际,CITAC,Cooperation on International Traceability in Analytical Chemistry,国际分析化学溯源合作组织,周婕
+153,国际,IUPAC,International Union of Pure and Applied Chemistry,国际理论（化学）与应用化学联合会,周婕
+154,,OIE,"World Organisation for Animal Health
 (Office International Des Epizooties )",世界动物卫生组织,周婕
-156,,FAO,Food and Agriculture Organization ,联合国粮食及农业组织,周婕
-157,,CAC ,Codex Alimentarius Commission,国际食品法典委员会,周婕
-158,欧洲,ENFSI,European Network Of Forensic Science Institutes,欧洲法庭科学实验室网络联盟,周婕
-159,美国,ASCLD/LAB,American Society of Crime Laboratory Directors / Laboratory Accreditation Board ,美国罪证化验所所长协会,周婕
+155,联合国,FAO,Food and Agriculture Organization ,联合国粮食及农业组织,周婕
+156,国际,CAC ,Codex Alimentarius Commission,国际食品法典委员会,周婕
+157,欧洲,ENFSI,European Network Of Forensic Science Institutes,欧洲法庭科学实验室网络联盟,周婕
+158,美国,ASCLD/LAB,American Society of Crime Laboratory Directors / Laboratory Accreditation Board ,美国罪证化验所所长协会,周婕
+159,中国,,Architectural Society of China,中国建筑学会,王国华
+160,中国,,China Association for Engineering Construction Standardization,中国工程建设标准化协会,王国华
+161,中国,,China Association of Special Equipment Inspection,中国特种设备检验协会,王国华
+162,中国,,"china promotion association for sepcial  equipement safety and energy-saving
+",中国特种设备安全与节能促进会,王国华
