@@ -1,4 +1,4 @@
-#include "SearchInfo.h"
+ï»¿#include "SearchInfo.h"
 #include "CSV.hpp"
 #include <iostream>
 #include "cocos2d.h"
@@ -25,9 +25,12 @@ std::string getFileData(const char * pFileName)
 	return data;
 }
 
-//×Ö·û´®²ğ·Ö  
+//å­—ç¬¦ä¸²æ‹†åˆ†  
 std::vector< std::string> splitString(std::string str, std::string pattern)
 {
+	//åŒå¼•å·å†…çš„å†…å®¹ä¸åšæ‹†åˆ†
+	bool bFindQuotation = false;
+	unsigned int start = 0;
 	std::string::size_type pos;
 	std::vector< std::string> result;
 	str += pattern;
@@ -38,7 +41,35 @@ std::vector< std::string> splitString(std::string str, std::string pattern)
 		if (pos < size)
 		{
 			std::string s = str.substr(i, pos - i);
-			result.push_back(s);
+
+			//åŒå¼•å·å†…çš„å†…å®¹ä¸åšæ‹†åˆ†
+			int nQuotation = count(s.begin(), s.end(), '"');
+			if (0 < nQuotation && nQuotation % 2 != 0)
+			{
+				if (bFindQuotation)
+				{
+					bFindQuotation = false;
+					std::string s1 = str.substr(start, pos - start);
+					
+					result.push_back(s1);
+				}
+				else
+				{
+					bFindQuotation = true;
+					start = i;
+				}
+			}
+			else if(!bFindQuotation)
+			{
+				// ç§»é™¤é¦–å°¾çš„"
+				if (s.find_first_of("\"") == 0)
+				{
+					s.erase(0, 1);
+					s.erase(s.find_last_of("\""), 1);
+				}
+				result.push_back(s);
+			}
+			
 			i = pos + pattern.size() - 1;
 		}
 	}
@@ -82,7 +113,7 @@ vector<SSimpleIndex> DictionaryManager::FindLikeAll(string input)
 	if (!input.empty())
 	{
 		if (input == SaveLastIndex)
-		{// ÏàÍ¬µÄËÑË÷
+		{// ç›¸åŒçš„æœç´¢
 			return CacheSearchResult;
 		}
 
@@ -94,7 +125,7 @@ vector<SSimpleIndex> DictionaryManager::FindLikeAll(string input)
 				string tmp = input.substr(0, SaveLastIndex.size());
 				if (tmp == SaveLastIndex)
 				{
-					// ´ÓÉÏ´ÎËÑË÷½á¹ûÖĞ²éÕÒ
+					// ä»ä¸Šæ¬¡æœç´¢ç»“æœä¸­æŸ¥æ‰¾
 					for (auto e : CacheSearchResult)
 					{
 						string key = e.Index;
@@ -156,7 +187,7 @@ vector<SVocabulary> DictionaryManager::SearchVocabulary(string input)
 {
 	vector<SVocabulary> result;
 
-	// ¾«È·²éÕÒ
+	// ç²¾ç¡®æŸ¥æ‰¾
 	vector<int> r = FindVocabularyByEnglish(input);
 	if (r.empty())
 	{
@@ -166,13 +197,13 @@ vector<SVocabulary> DictionaryManager::SearchVocabulary(string input)
 	{
 		result.push_back(GetVocabularyInfo(i));
 	}
-	// ÒÑÕÒµ½
+	// å·²æ‰¾åˆ°
 	if (0 < result.size())
 	{
 		return result;
 	}
 
-	// ÈÏ¿É´Ê»ãÄ£ºıËÑË÷
+	// è®¤å¯è¯æ±‡æ¨¡ç³Šæœç´¢
 	r = FindLikeVocabularyByEnglish(input);
 	for (auto i : r)
 	{
@@ -195,7 +226,7 @@ vector<SAgency> DictionaryManager::SearchAgency(string input)
 {
 	vector<SAgency> result;
 
-	// ¾«È·²éÕÒ
+	// ç²¾ç¡®æŸ¥æ‰¾
 	vector<int> r = FindAgencyByAbbrName(input);
 	if (r.empty())
 	{
@@ -206,14 +237,14 @@ vector<SAgency> DictionaryManager::SearchAgency(string input)
 		result.push_back(GetAgencyInfo(i));
 	}
 
-	// ÒÑÕÒµ½
+	// å·²æ‰¾åˆ°
 	if (0 < result.size())
 	{
 		return result;
 	}
 
 
-	// Ä£ºı²éÕÒ
+	// æ¨¡ç³ŠæŸ¥æ‰¾
 	r = FindAgencyByAbbrName(input);
 	for (auto i : r)
 	{
@@ -234,7 +265,7 @@ vector<SAgency> DictionaryManager::SearchAgency(string input)
 vector<SCountryGroup> DictionaryManager::SearchGroup(string input)
 {
 	vector<SCountryGroup> result;
-	// ¾«È·²éÕÒ
+	// ç²¾ç¡®æŸ¥æ‰¾
 	vector<int> r = FindGroupByAbbrName(input);
 	if (r.empty())
 	{
@@ -245,14 +276,14 @@ vector<SCountryGroup> DictionaryManager::SearchGroup(string input)
 		result.push_back(GetGroupInfo(i));
 	}
 
-	// ÒÑÕÒµ½
+	// å·²æ‰¾åˆ°
 	if (0 < result.size())
 	{
 		return result;
 	}
 
 
-	// Ä£ºı²éÕÒ
+	// æ¨¡ç³ŠæŸ¥æ‰¾
 	r = FindLikeGroupByAbbrName(input);
 	for (auto i : r)
 	{
@@ -277,10 +308,10 @@ void DictionaryManager::LoadVocabulary()
 	cout << "load " << c_str_vocabulary_file.c_str() << endl;
 
 	auto data = getFileData(c_str_vocabulary_file.c_str());
-	// ¶ÁĞĞ
+	// è¯»è¡Œ
 	auto lines = splitString(data, "\r\n");
 
-	// ²ğ·ÖĞĞ
+	// æ‹†åˆ†è¡Œ
 	for (int i = 1; i < lines.size(); ++i)
 	{
 		auto fields = splitString(lines[i], ",");
@@ -363,7 +394,7 @@ void DictionaryManager::LoadVocabulary()
 // 		}
 	}
 	*/
-	// ÅÅĞò
+	// æ’åº
 }
 
 void DictionaryManager::LoadAgency()
@@ -371,22 +402,23 @@ void DictionaryManager::LoadAgency()
 	cout << "load " << c_str_agency_file.c_str() << endl;
 
 	auto data = getFileData(c_str_agency_file.c_str());
-	// ¶ÁĞĞ
+	// è¯»è¡Œ
 	auto lines = splitString(data, "\r\n");
 
-	// ²ğ·ÖĞĞ
+	// æ‹†åˆ†è¡Œ
 	for (int i = 1; i < lines.size(); ++i)
 	{
 		auto fields = splitString(lines[i], ",");
-		if (fields.size() < 4)
+		if (fields.size() < 5)
 			continue;
 
 		SAgency s;
 		s.Base.id = atoi(fields[0].c_str());
-		s.Base.Chinese = fields[1];
-		s.Base.English = fields[2];
+		s.Base.Chinese = fields[2];
+		s.Base.English = fields[4];
+		s.Noun = fields[1];
 		s.EnglishFullName = fields[3];
-		s.ChineseFullName = fields[4];
+		s.ChineseFullName = fields[5];
 
 		AllAgency.insert(make_pair(s.Base.id, s));
 		Add2AllIndex(s.Base, EType::Agency);
@@ -445,7 +477,7 @@ void DictionaryManager::LoadAgency()
 // 		}
 	}
 	*/
-	// ÅÅĞò
+	// æ’åº
 }
 
 void DictionaryManager::LoadGroup()
@@ -453,10 +485,10 @@ void DictionaryManager::LoadGroup()
 	cout << "load " << c_str_group_file.c_str() << endl;
 
 	auto data = getFileData(c_str_group_file.c_str());
-	// ¶ÁĞĞ
+	// è¯»è¡Œ
 	auto lines = splitString(data, "\r\n");
 
-	// ²ğ·ÖĞĞ
+	// æ‹†åˆ†è¡Œ
 	for (int i = 1; i < lines.size(); ++i)
 	{
 		auto fields = splitString(lines[i], ",");
@@ -525,7 +557,7 @@ void DictionaryManager::LoadGroup()
 // 		}
 	}
 	*/
-	// ÅÅĞò
+	// æ’åº
 }
 
 void DictionaryManager::Add2AllIndex(const RecordBase& record, EType type)
@@ -533,7 +565,7 @@ void DictionaryManager::Add2AllIndex(const RecordBase& record, EType type)
 	SIndexBase idx;
 	idx.Type = type;
 	idx.Id = record.id;
-	// Ó¢ÎÄÃû
+	// è‹±æ–‡å
 	if (!record.English.empty())
 	{
 		string index = record.English;
@@ -553,7 +585,7 @@ void DictionaryManager::Add2AllIndex(const RecordBase& record, EType type)
 			AllIndex[index].ids.push_back(idx);
 		}
 	}
-	// ÖĞÎÄÃû
+	// ä¸­æ–‡å
 	if (!record.Chinese.empty())
 	{
 		map<string, SSimpleIndex>::iterator result = AllIndex.find(record.Chinese);
@@ -810,7 +842,7 @@ int DictionaryManager::code_convert(const char *from_charset, const char *to_cha
 	return 0;
 }
 
-/*GBK×ªUTF8*/
+/*GBKè½¬UTF8*/
 std::string DictionaryManager::GBK2Utf8(const char *inbuf)
 {
 	if (NULL == inbuf || 0 == inbuf[0])
@@ -864,7 +896,7 @@ void UTF8ToUnicode(wchar_t* pOut, char *pText)
 }
 void UnicodeToUTF8(char* pOut, wchar_t* pText)
 {
-	// ×¢Òâ WCHAR¸ßµÍ×ÖµÄË³Ğò,µÍ×Ö½ÚÔÚÇ°£¬¸ß×Ö½ÚÔÚºó 
+	// æ³¨æ„ WCHARé«˜ä½å­—çš„é¡ºåº,ä½å­—èŠ‚åœ¨å‰ï¼Œé«˜å­—èŠ‚åœ¨å 
 	char* pchar = (char *)pText;
 	pOut[0] = (0xE0 | ((pchar[1] & 0xF0) >> 4));
 	pOut[1] = (0x80 | ((pchar[1] & 0x0F) << 2)) + ((pchar[0] & 0xC0) >> 6);
@@ -888,7 +920,7 @@ void GB2312ToUTF8(std::string& pOut, char *pText, int pLen)
 	int i = 0, j = 0;
 	while (i < pLen)
 	{
-		//Èç¹ûÊÇÓ¢ÎÄÖ±½Ó¸´ÖÆ¾Í¿ÉÒÔ 
+		//å¦‚æœæ˜¯è‹±æ–‡ç›´æ¥å¤åˆ¶å°±å¯ä»¥ 
 		if (*(pText + i) >= 0)
 		{
 			rst[j++] = pText[i++];
@@ -906,7 +938,7 @@ void GB2312ToUTF8(std::string& pOut, char *pText, int pLen)
 		}
 	}
 
-	//rst[j] ='\n';  	//·µ»Ø½á¹û  
+	//rst[j] ='\n';  	//è¿”å›ç»“æœ  
 	pOut = rst;
 	delete[]rst;
 	return;

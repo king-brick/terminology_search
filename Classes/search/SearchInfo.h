@@ -10,11 +10,13 @@ namespace MySearch
 {
 
 // 输入框字体大小
-#define TEXT_INPUT_FONTSIZE 14
+#define TEXT_INPUT_FONTSIZE 13
 // 输出结果字体大小
-#define TEXT_RESULT_FONTSIZE 12
+#define TEXT_RESULT_FONTSIZE 10
 // 文本行高度
 #define TEXT_LINE_HEIGHT (TEXT_RESULT_FONTSIZE + 2)
+// 文本行间距
+#define TEXT_LINE_SPACE 7
 
 // 输入框的字体大小
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
@@ -50,6 +52,8 @@ struct SAgency
 {
 	// 基础数据
 	RecordBase Base;
+	// 洲
+	string Noun;
 	// 英文全称
 	string EnglishFullName;
 	// 中文译名
